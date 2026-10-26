@@ -4,39 +4,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Không Gian Văn Hóa Hồ Chí Minh Trực Tuyến | Trường THPT Mạc Đĩnh Chi – Phường Phú Lâm</title>
-  <!-- Google Fonts hỗ trợ tiếng Việt trang trọng -->
+  <title>Không Gian Văn Hóa Hồ Chí Minh Trực Tuyến | Chi bộ Trường THPT Mạc Đĩnh Chi – Đảng bộ Phường Phú Lâm</title>
+  <meta name="description"
+    content="Hệ thống Bảo tàng số, Phòng truyền thống 360° và Kho lưu trữ Tư tưởng, Đạo đức, Phong cách Hồ Chí Minh của Chi bộ Trường THPT Mạc Đĩnh Chi phối hợp cùng Đảng bộ Phường Phú Lâm." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@500;700&family=Noto+Serif:ital,wght@0,600;0,700;1,400;1,600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body class="bg-pattern">
 
+  <!-- DẢI KHÁNH TIẾT ĐẢNG CỘNG SẢN VIỆT NAM -->
+  <div class="party-top-ribbon" data-cms-edit="general" data-cms-label="Khẩu hiệu Đảng & Đơn vị">
+    <div class="party-ribbon-inner">
+      <div class="party-slogan-group">
+        <span class="party-flag-badge" title="Đảng Cộng sản Việt Nam">
+          <!-- Biểu trưng Búa Liềm & Sao Vàng -->
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2L14.85 8.65L22 9.25L16.55 13.95L18.2 21L12 17.25L5.8 21L7.45 13.95L2 9.25L9.15 8.65L12 2Z" />
+          </svg>
+          ĐẢNG CỘNG SẢN VIỆT NAM
+        </span>
+        <span id="cmsPartySlogan">ĐẢNG CỘNG SẢN VIỆT NAM QUANG VINH MUÔN NĂM • HỌC TẬP VÀ LÀM THEO TƯ TƯỞNG, ĐẠO ĐỨC,
+          PHONG CÁCH HỒ CHÍ MINH</span>
+      </div>
+      <div class="party-ribbon-meta">
+        <span id="cmsPartyCellBadge">Chi bộ THPT Mạc Đĩnh Chi • Đảng bộ Phường Phú Lâm</span>
+        <a href="admin.html" class="ribbon-admin-link" title="Mở Bàn Xây dựng Bảo tàng toàn màn hình">
+          🏛️ Studio Quản Trị Toàn Màn Hình
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- THANH ĐIỀU HƯỚNG CỐ ĐỊNH -->
   <header class="site-header">
     <div class="nav-container">
-      <a href="#top" class="brand-identity">
+      <a href="#top" class="brand-identity" data-cms-edit="general" data-cms-label="Thương hiệu & Tên Trường">
         <div class="brand-emblem" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="#f0c975">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#f5cf76">
             <path d="M12 2L14.85 8.65L22 9.25L16.55 13.95L18.2 21L12 17.25L5.8 21L7.45 13.95L2 9.25L9.15 8.65L12 2Z" />
           </svg>
         </div>
         <div class="brand-text-group">
-          <span class="brand-sub">Trường THPT Mạc Đĩnh Chi • Phường Phú Lâm</span>
-          <span class="brand-title">Không Gian Văn Hóa Hồ Chí Minh</span>
+          <span id="cmsBrandSub" class="brand-sub">Chi bộ Trường THPT Mạc Đĩnh Chi • Đảng bộ Phường Phú Lâm</span>
+          <span id="cmsBrandTitle" class="brand-title">Không Gian Văn Hóa Hồ Chí Minh</span>
         </div>
       </a>
 
       <ul class="nav-links">
-        <li><a href="#phong-360">Phòng Bảo tàng 360°</a></li>
-        <li><a href="#dong-thoi-gian">Biên niên sử</a></li>
-        <li><a href="#hien-vat-so">Hiện vật & Tủ sách</a></li>
-        <li><a href="#tuong-tac">Trắc nghiệm & Sổ vàng</a></li>
-        <li><a href="#lo-trinh">Hướng dẫn triển khai</a></li>
+        <li><a href="#phong-360">I. Không gian 360°</a></li>
+        <li><a href="#dong-thoi-gian">II. Biên niên sử Đảng & Bác</a></li>
+        <li><a href="#hien-vat-so">III. Kho Lưu trữ & Tủ sách</a></li>
+        <li><a href="#tuong-tac">IV. Sinh hoạt Chính trị</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -44,98 +67,128 @@
           <span class="audio-wave">
             <span></span><span></span><span></span>
           </span>
-          <span id="audioGuideLabel">Thuyết minh tự động</span>
+          <span id="audioGuideLabel">Thuyết minh</span>
+        </button>
+
+        <button id="btnInlineEditToggle" class="btn-inline-edit-toggle" type="button"
+          title="Bật chế độ bấm vào bất kỳ đâu trên trang để sửa trực tiếp">
+          ✏️ Sửa trực tiếp
+        </button>
+
+        <button id="btnOpenStudio" class="btn-studio-trigger" type="button"
+          title="Mở Trình Xây dựng & Quản trị Bảo tàng Không cần Code">
+          🛠️ Quản trị Bảo tàng (No-Code)
         </button>
       </div>
     </div>
   </header>
 
-  <!-- 1. SẢNH KHÁNH TIẾT (HERO SECTION) -->
+  <!-- PHÂN KHU I: SẢNH KHÁNH TIẾT (HERO SECTION) -->
   <section id="top" class="hero-section">
     <div class="hero-glow"></div>
     <div class="hero-container">
-      <div class="hero-copy">
+      <div class="hero-copy" data-cms-edit="general" data-cms-label="Nội dung Sảnh Khánh Tiết">
         <div class="location-badge">
-          <span>★</span> Trường THPT Mạc Đĩnh Chi • Phường Phú Lâm
+          <span>★</span>
+          <span id="cmsHeroBadge">Công trình Chào mừng • Chi bộ THPT Mạc Đĩnh Chi & Đảng bộ Phường Phú Lâm</span>
         </div>
+
         <h1 class="hero-title">
-          Không Gian Văn Hóa Hồ Chí Minh
-          <span class="gold-highlight">Bảo Tàng Số & Phòng Truyền Thống 360°</span>
+          <span id="cmsHeroTitleMain">Không Gian Văn Hóa Hồ Chí Minh</span>
+          <span id="cmsHeroTitleSub" class="gold-highlight">Hệ Thống Bảo Tàng Số, Lưu Trữ Lịch Sử Đảng & Phòng Truyền
+            Thống 360°</span>
         </h1>
 
         <div class="hero-quote-box">
-          <p class="hero-quote-text">
+          <p id="cmsHeroQuote" class="hero-quote-text">
             “Vì lợi ích mười năm thì phải trồng cây, vì lợi ích trăm năm thì phải trồng người.”
           </p>
-          <span class="hero-quote-author">— Chủ tịch Hồ Chí Minh</span>
+          <span id="cmsHeroQuoteAuthor" class="hero-quote-author">— Chủ tịch Hồ Chí Minh</span>
         </div>
 
-        <p class="hero-desc">
-          Công trình số hóa Không gian Văn hóa Hồ Chí Minh của <strong>Trường THPT Mạc Đĩnh Chi</strong> phối hợp cùng địa bàn <strong>Phường Phú Lâm</strong>. Kết hợp hài hòa giữa trang triển lãm tương tác đa phương tiện và góc tham quan phòng bảo tàng thật 360° ngay trên điện thoại và máy tính.
+        <p id="cmsHeroDesc" class="hero-desc">
+          Công trình số hóa chuẩn mực của <strong>Chi bộ Trường THPT Mạc Đĩnh Chi</strong> phối hợp cùng <strong>Đảng bộ
+            Phường Phú Lâm</strong>. Tích hợp đồng bộ không gian trưng bày thực tế 360°, biên niên sử cách mạng, kho lưu
+          trữ hiện vật chuẩn bảo tàng học và hệ thống quản trị trực quan không cần lập trình (No-Code).
         </p>
 
         <div class="hero-cta-group">
           <a href="#phong-360" class="btn-primary">
-            <span>🏛️</span> Bước vào Phòng Bảo Tàng 360°
+            Bước vào Phòng Trưng Bày 360°
           </a>
           <a href="#hien-vat-so" class="btn-secondary">
-            <span>📖</span> Khám phá Hiện vật & Tủ sách
+            Tra cứu Hồ sơ Hiện vật & Tủ sách Đảng
           </a>
         </div>
       </div>
 
-      <!-- Khung biểu trưng Khánh tiết -->
-      <div class="hero-visual-frame">
+      <!-- Khung Biểu trưng Khánh tiết Trung tâm -->
+      <div class="hero-visual-frame" data-cms-edit="general" data-cms-label="Khung Khánh Tiết & Số liệu">
         <div class="monument-artwork">
-          <div class="lotus-mandala">
+          <div class="monument-top-banners">
+            <span>★ ĐẢNG CỘNG SẢN VIỆT NAM ★</span>
+            <span>NƯỚC CHXHCN VIỆT NAM</span>
+          </div>
+
+          <div class="lotus-mandala" id="cmsHeroEmblemContainer">
             <div class="lotus-ring"></div>
-            <svg width="96" height="96" viewBox="0 0 100 100" fill="none">
-              <circle cx="50" cy="50" r="42" stroke="#d4a853" stroke-width="1.5" stroke-dasharray="4 4" />
-              <path d="M50 16L58.5 39H83L63 53.5L70.5 77L50 62.5L29.5 77L37 53.5L17 39H41.5L50 16Z" fill="#f0c975" />
+            <div class="lotus-ring-inner"></div>
+            <img id="cmsHeroCustomImage" class="hero-custom-img" src="" alt="Biểu trưng trung tâm"
+              style="display: none;" />
+            <svg id="cmsHeroDefaultSvg" width="96" height="96" viewBox="0 0 100 100" fill="none">
+              <circle cx="50" cy="50" r="44" stroke="#f5cf76" stroke-width="1.5" stroke-dasharray="4 4" />
+              <circle cx="50" cy="50" r="36" fill="#7c0d12" stroke="#d9a94c" stroke-width="1.2" />
+              <path d="M50 18L57.8 39.2H80.4L62.1 52.4L69.1 74L50 60.6L30.9 74L37.9 52.4L19.6 39.2H42.2L50 18Z"
+                fill="#f5cf76" />
             </svg>
           </div>
-          <h2 class="monument-caption">Trường THPT Mạc Đĩnh Chi</h2>
-          <p class="monument-sub">Không gian Văn hóa Hồ Chí Minh trực tuyến – Liên kết Phường Phú Lâm</p>
+
+          <h2 id="cmsMonumentTitle" class="monument-caption">Chi Bộ Trường THPT Mạc Đĩnh Chi</h2>
+          <p id="cmsMonumentSub" class="monument-sub">Địa chỉ Đỏ Giáo dục Lý tưởng Cách mạng – Liên kết Đảng bộ Phường
+            Phú Lâm</p>
         </div>
 
-        <div class="stats-ribbon">
+        <div id="cmsStatsRibbon" class="stats-ribbon">
           <div class="stat-item">
-            <span class="stat-num">04</span>
-            <span class="stat-label">Phân khu trưng bày</span>
+            <span id="cmsStat1Num" class="stat-num">04</span>
+            <span id="cmsStat1Label" class="stat-label">Vách trưng bày 360°</span>
           </div>
           <div class="stat-item">
-            <span class="stat-num">360°</span>
-            <span class="stat-label">Điểm chạm Hotspot</span>
+            <span id="cmsStat2Num" class="stat-num">06+</span>
+            <span id="cmsStat2Label" class="stat-label">Hồ sơ Hiện vật chuẩn hóa</span>
           </div>
           <div class="stat-item">
-            <span class="stat-num">100%</span>
-            <span class="stat-label">Tương thích Di động</span>
+            <span id="cmsStat3Num" class="stat-num">100%</span>
+            <span id="cmsStat3Label" class="stat-label">Quản trị No-Code Trực quan</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 2. MÔ PHỎNG PHÒNG BẢO TÀNG THẬT 360° (ZERO SERVER GPU) -->
-  <section id="phong-360" class="section-block">
+  <!-- PHÂN KHU II: MÔ PHỎNG PHÒNG BẢO TÀNG THẬT 360° -->
+  <section id="phong-360" class="section-block" data-cms-edit="walls" data-cms-label="Phòng Bảo Tàng 360° (4 Vách)">
     <div class="section-header">
-      <div class="section-kicker">★ Trải nghiệm Không gian Thực & Ảo (Hybrid)</div>
-      <h2 class="section-title">Tham Quan Phòng Bảo Tàng Của Trường (Góc nhìn 4 Vách)</h2>
+      <div class="section-index-pill">PHÂN KHU I • KHÔNG GIAN KHÁNH TIẾT & TRƯNG BÀY 360°</div>
+      <h2 class="section-title">Tham Quan Phòng Truyền Thống 360° (Mô Hình 4 Vách Khoa Học)</h2>
       <p class="section-subtitle">
-        Kéo chuột qua trái/phải hoặc bấm vào từng vách tường bên dưới để xoay góc nhìn trong phòng bảo tàng. Bấm vào các
-        nút điểm sáng <strong>(+)</strong> trên kệ trưng bày để nghe thuyết minh và xem tư liệu phóng to.
+        Kéo chuột trái/phải, bấm vào các tab vách tường hoặc chọn trên <strong>Sơ đồ mặt bằng Radar</strong> góc dưới để
+        xoay góc nhìn 360°. Bấm vào các điểm chạm <strong>(+)</strong> trên từng tủ trưng bày để mở hồ sơ lưu trữ và
+        nghe thuyết minh.
       </p>
     </div>
 
     <div class="virtual-room-wrapper">
       <div class="room-toolbar">
-        <div class="room-Wall-tabs">
-          <button class="wall-tab active" type="button">1. Vách Khánh Tiết (Chính diện)</button>
-          <button class="wall-tab" type="button">2. Vách Hành Trình Cứu Nước</button>
-          <button class="wall-tab" type="button">3. Vách Bác Hồ Với Giáo Dục</button>
-          <button class="wall-tab" type="button">4. Vách Trường & Phường Phú Lâm</button>
+        <div id="roomWallTabs" class="room-Wall-tabs">
+          <!-- Render động từ MUSEUM_STATE.walls -->
         </div>
-        <span class="room-tech-badge">⚡ Công nghệ CSS 3D Panorama – Không cần GPU Server</span>
+        <div class="room-toolbar-right">
+          <button type="button" class="cms-btn-sm" onclick="openCmsStudio('walls')">
+            🖼️ Thay ảnh nền Vách & Sửa Kệ trưng bày
+          </button>
+          <span class="room-tech-badge">⚡ Kiến trúc 360° Hybrid</span>
+        </div>
       </div>
 
       <div id="roomViewport" class="room-viewport">
@@ -146,143 +199,37 @@
           <div class="ceiling-light"></div>
         </div>
 
-        <!-- 4 Vách tường trượt mượt như góc xoay 360 -->
-        <div id="panoramaStage" class="panorama-stage">
+        <!-- 4 Vách tường render động từ CMS -->
+        <div id="panoramaStage" class="panorama-stage"></div>
 
-          <!-- VÁCH 1: SẢNH CHÍNH DIỆN -->
-          <div class="museum-wall">
-            <div class="wall-banner">Vách 1 • Sảnh Khánh Tiết & 5 Điều Bác Hồ Dạy</div>
-            <div class="wall-exhibits-row">
-              <div class="wall-frame" onclick="openArtifactById('art-5')">
-                <span class="hotspot-pin" title="Bấm xem chi tiết">+</span>
-                <div class="wall-frame-category">Bảng Trích Dẫn Bên Trái</div>
-                <h3 class="wall-frame-title">5 Điều Bác Hồ Dạy Thiếu Niên, Nhi Đồng</h3>
-                <p class="wall-frame-desc">Được treo trang trọng tại phòng truyền thống. Bấm vào để nghe đọc 5 điều Bác
-                  dạy.</p>
-              </div>
-
-              <div class="wall-frame"
-                style="border-color: #f0c975; background: linear-gradient(145deg, #4f1414, #280909); text-align: center;"
-                onclick="speakText('Không có gì quý hơn độc lập, tự do. Chủ tịch Hồ Chí Minh sống mãi trong sự nghiệp của chúng ta.')">
-                <span class="hotspot-pin" title="Bấm nghe thuyết minh">+</span>
-                <div class="wall-frame-category">Bục Tượng Đài Trung Tâm</div>
-                <h3 class="wall-frame-title">Tượng Chân Dung Chủ Tịch Hồ Chí Minh</h3>
-                <p class="wall-frame-desc">Không gian dâng hoa và sinh hoạt đầu tuần của thầy trò nhà trường cùng đoàn
-                  viên Phường Phú Lâm.</p>
-              </div>
-
-              <div class="wall-frame" onclick="openArtifactById('art-2')">
-                <span class="hotspot-pin" title="Bấm xem chi tiết">+</span>
-                <div class="wall-frame-category">Bảng Trích Dẫn Bên Phải</div>
-                <h3 class="wall-frame-title">Thư Bác Gửi Học Sinh Khai Trường (9/1945)</h3>
-                <p class="wall-frame-desc">Lời nhắn nhủ non sông Việt Nam sánh vai cùng các cường quốc năm châu.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- VÁCH 2: QUÊ HƯƠNG & HÀNH TRÌNH CỨU NƯỚC -->
-          <div class="museum-wall">
-            <div class="wall-banner">Vách 2 • Quê Hương Kim Liên & 30 Năm Tìm Đường Cứu Nước</div>
-            <div class="wall-exhibits-row">
-              <div class="wall-frame" onclick="openArtifactById('art-1')">
-                <span class="hotspot-pin">+</span>
-                <div class="wall-frame-category">Tủ Kính Mô Hình</div>
-                <h3 class="wall-frame-title">Tàu Amiral Latouche-Tréville (1911)</h3>
-                <p class="wall-frame-desc">Mô hình con tàu tại Bến Nhà Rồng. Có thể thay bằng ảnh chụp thật tủ kính tại
-                  phòng của trường.</p>
-              </div>
-
-              <div class="wall-frame" onclick="openArtifactById('art-3')">
-                <span class="hotspot-pin">+</span>
-                <div class="wall-frame-category">Tủ Hiện Vật Phục Chế</div>
-                <h3 class="wall-frame-title">Đôi Dép Cao Su & Áo Kaki Giản Dị</h3>
-                <p class="wall-frame-desc">Tấm gương đạo đức cần, kiệm, liêm, chính, chí công vô tư của Bác.</p>
-              </div>
-
-              <div class="wall-frame" onclick="openArtifactById('art-4')">
-                <span class="hotspot-pin">+</span>
-                <div class="wall-frame-category">Bản Đồ Lịch Sử</div>
-                <h3 class="wall-frame-title">Hành Trình Qua 3 Đại Dương, 4 Châu Lục</h3>
-                <p class="wall-frame-desc">Sơ đồ trực quan từ Bến Nhà Rồng (1911) đến Pác Bó – Cao Bằng (1941).</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- VÁCH 3: BÁC HỒ VỚI GIÁO DỤC & TỦ SÁCH -->
-          <div class="museum-wall">
-            <div class="wall-banner">Vách 3 • Tủ Sách Hồ Chí Minh & Sự Nghiệp Trồng Người</div>
-            <div class="wall-exhibits-row">
-              <div class="wall-frame" onclick="openArtifactById('art-4')">
-                <span class="hotspot-pin">+</span>
-                <div class="wall-frame-category">Kệ Sách Số Hóa</div>
-                <h3 class="wall-frame-title">Tác Phẩm “Đường Kách Mệnh” & “Nhật Ký Trong Tù”</h3>
-                <p class="wall-frame-desc">Tích hợp mã QR và sách lật trang điện tử cho học sinh đọc trên điện thoại.
-                </p>
-              </div>
-
-              <div class="wall-frame" onclick="openArtifactById('art-2')">
-                <span class="hotspot-pin">+</span>
-                <div class="wall-frame-category">Chuyên Đề Giáo Dục</div>
-                <h3 class="wall-frame-title">Bác Hồ Với Thiếu Nhi & Nhà Giáo</h3>
-                <p class="wall-frame-desc">Bộ ảnh tư liệu Bác thăm các trường học và căn dặn đội ngũ thầy cô giáo.</p>
-              </div>
-
-              <div class="wall-frame"
-                onclick="speakText('Miền Nam luôn ở trong trái tim tôi. Đồng bào Nam Bộ là dân nước Việt Nam. Sông có thể cạn, núi có thể mòn, song chân lý đó không bao giờ thay đổi.')">
-                <span class="hotspot-pin">+</span>
-                <div class="wall-frame-category">Chuyên Đề Miền Nam</div>
-                <h3 class="wall-frame-title">Bác Hồ Với Đồng Bào Miền Nam</h3>
-                <p class="wall-frame-desc">Hình ảnh cây vú sữa miền Nam và tình cảm sâu nặng của Bác dành cho Sài Gòn –
-                  Gia Định.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- VÁCH 4: NHÀ TRƯỜNG & PHƯỜNG PHÚ LÂM -->
-          <div class="museum-wall">
-            <div class="wall-banner">Vách 4 • Góc Hoạt Động Nhà Trường & Phường Phú Lâm</div>
-            <div class="wall-exhibits-row">
-              <div class="wall-frame" onclick="openArtifactById('art-6')">
-                <span class="hotspot-pin">+</span>
-                <div class="wall-frame-category">Hoạt Động Thực Tế</div>
-                <h3 class="wall-frame-title">Tiết Học Lịch Sử Tại Phòng Bảo Tàng</h3>
-                <p class="wall-frame-desc">Hình ảnh giáo viên và học sinh nhà trường học tập trực quan tại phòng bảo
-                  tàng.</p>
-              </div>
-
-              <div class="wall-frame" onclick="openArtifactById('art-6')">
-                <span class="hotspot-pin">+</span>
-                <div class="wall-frame-category">Liên Kết Địa Phương</div>
-                <h3 class="wall-frame-title">Đoàn Viên & Nhân Dân Phường Phú Lâm Tham Quan</h3>
-                <p class="wall-frame-desc">Không gian sinh hoạt chính trị, lễ kết nạp Đoàn – Đội và tọa đàm chuyên đề
-                  của Phường.</p>
-              </div>
-
-              <div class="wall-frame"
-                onclick="document.getElementById('tuong-tac').scrollIntoView({behavior:'smooth'})">
-                <span class="hotspot-pin">+</span>
-                <div class="wall-frame-category">Bàn Tương Tác Số</div>
-                <h3 class="wall-frame-title">Ghi Sổ Vàng Lưu Niệm & Trắc Nghiệm</h3>
-                <p class="wall-frame-desc">Bấm để di chuyển xuống bàn ghi cảm nghĩ trực tuyến và nhận chứng nhận tham
-                  quan.</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Sàn gạch & Thảm đỏ bảo tàng -->
+        <!-- Sàn gạch & Thảm đỏ khánh tiết -->
         <div class="room-floor">
           <div class="red-carpet"></div>
+        </div>
+
+        <!-- Sơ đồ mặt bằng Radar (Architectural Floorplan Minimap) -->
+        <div class="room-radar-map" title="Sơ đồ mặt bằng 4 vách phòng truyền thống">
+          <span class="radar-title">Sơ đồ Mặt bằng</span>
+          <div class="radar-grid">
+            <button type="button" class="radar-wall-btn w-top active" onclick="goToWall(0)">V1</button>
+            <button type="button" class="radar-wall-btn w-right" onclick="goToWall(1)">V2</button>
+            <button type="button" class="radar-wall-btn w-bottom" onclick="goToWall(2)">V3</button>
+            <button type="button" class="radar-wall-btn w-left" onclick="goToWall(3)">V4</button>
+            <div id="radarFovCone" class="radar-fov-cone">
+              <div class="radar-center-dot"></div>
+            </div>
+          </div>
+          <span id="radarDirectionLabel" style="font-size: 0.62rem; color: var(--text-light-muted);">Hướng Bắc (Vách
+            1)</span>
         </div>
       </div>
 
       <div class="room-footer-bar">
         <div>
-          📍 <strong id="currentWallIndicator" style="color: var(--gold-bright);">Góc nhìn 1/4: Sảnh Chính diện & Tượng
-            đài Bác</strong>
-          <span style="margin-left: 0.75rem; opacity: 0.8;">(Mẹo: Sau này chụp 4 bức ảnh thật của 4 bức tường phòng bảo
-            tàng trường lắp vào đây là giống thật 100%!)</span>
+          📍 <strong id="currentWallIndicator" style="color: var(--gold-bright);">Góc nhìn 1/4: Vách Khánh Tiết Chính
+            Diện</strong>
+          <span style="margin-left: 0.6rem; opacity: 0.82;">• Bạn có thể tải ảnh chụp thực tế 4 bức tường của trường lên
+            trong mục Quản trị No-Code.</span>
         </div>
         <div class="room-controls-btns">
           <button id="btnPrevWall" class="btn-room-nav" type="button">◀ Xoay sang trái</button>
@@ -292,15 +239,15 @@
     </div>
   </section>
 
-  <!-- 3. DÒNG THỜI GIAN LỊCH SỬ (BIÊN NIÊN SỬ) -->
-  <section id="dong-thoi-gian" class="timeline-section">
+  <!-- PHÂN KHU III: BIÊN NIÊN SỬ ĐẢNG & BÁC HỒ -->
+  <section id="dong-thoi-gian" class="timeline-section" data-cms-edit="timeline" data-cms-label="Biên niên sử Lịch sử">
     <div class="timeline-container">
       <div class="section-header">
-        <div class="section-kicker">★ Hành trình Di sản</div>
-        <h2 class="section-title">Biên Niên Sử Cuộc Đời & Sự Nghiệp Chủ Tịch Hồ Chí Minh</h2>
+        <div class="section-index-pill">PHÂN KHU II • TIẾN TRÌNH LỊCH SỬ CÁCH MẠNG</div>
+        <h2 class="section-title">Biên Niên Sử Chủ Tịch Hồ Chí Minh & Sự Nghiệp Vẻ Vang Của Đảng</h2>
         <p class="section-subtitle">
-          Bấm vào từng giai đoạn lịch sử để xem nội dung chuẩn hóa và gợi ý cách sắp xếp tư liệu tương ứng trong phòng
-          bảo tàng của trường.
+          Hệ thống hóa khoa học theo phân kỳ lịch sử từ quê hương Kim Liên, hành trình 30 năm tìm đường cứu nước, sáng
+          lập Đảng Cộng sản Việt Nam đến di sản Không gian Văn hóa Hồ Chí Minh tại địa phương hôm nay.
         </p>
       </div>
 
@@ -309,72 +256,102 @@
     </div>
   </section>
 
-  <!-- 4. KHU TRƯNG BÀY HIỆN VẬT SỐ & TỦ SÁCH -->
-  <section id="hien-vat-so" class="section-block">
+  <!-- PHÂN KHU IV: KHO LƯU TRỮ HIỆN VẬT SỐ & TỦ SÁCH ĐẢNG -->
+  <section id="hien-vat-so" class="section-block" data-cms-edit="artifacts" data-cms-label="Kho Hiện vật & Tủ sách">
     <div class="section-header">
-      <div class="section-kicker">★ Kho Tư Liệu Số Hóa</div>
-      <h2 class="section-title">Hiện Vật Trưng Bày & Tủ Sách Hồ Chí Minh</h2>
+      <div class="section-index-pill">PHÂN KHU III • HỆ THỐNG HỒ SƠ LƯU TRỮ & TỦ SÁCH ĐẢNG</div>
+      <h2 class="section-title">Danh Mục Hiện Vật Trưng Bày & Tủ Sách Tư Tưởng Hồ Chí Minh</h2>
       <p class="section-subtitle">
-        Mỗi hiện vật dưới đây đều tích hợp sẵn nút <strong>Nghe thuyết minh tự động</strong> và vị trí kệ trưng bày thực
-        tế để bạn dễ dàng đối chiếu khi số hóa phòng truyền thống.
+        Mỗi hiện vật được định danh bằng <strong>Mã hồ sơ lưu trữ</strong>, tích hợp thuyết minh âm thanh tự động, vị
+        trí kệ thực tế và công cụ xuất <strong>Nhãn Mã QR</strong> để in dán trực tiếp tại phòng truyền thống của nhà
+        trường.
       </p>
     </div>
 
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all" type="button">Tất cả chuyên đề (06)</button>
-      <button class="filter-btn" data-filter="hien-vat" type="button">Hiện vật & Mô hình</button>
-      <button class="filter-btn" data-filter="giao-duc" type="button">Bác Hồ với Giáo dục</button>
-      <button class="filter-btn" data-filter="tu-lieu-sach" type="button">Tủ sách Điện tử</button>
-      <button class="filter-btn" data-filter="phu-lam" type="button">Trường & Phường Phú Lâm</button>
+    <div class="archive-controls-bar">
+      <div id="artifactFilterBar" class="filter-bar">
+        <button class="filter-btn active" data-filter="all" type="button">Tất cả hồ sơ</button>
+        <button class="filter-btn" data-filter="hien-vat" type="button">Hiện vật & Mô hình</button>
+        <button class="filter-btn" data-filter="giao-duc" type="button">Bác Hồ với Giáo dục</button>
+        <button class="filter-btn" data-filter="tu-lieu-sach" type="button">Tủ sách Đảng & Bác Hồ</button>
+        <button class="filter-btn" data-filter="phu-lam" type="button">Chi bộ Trường & Phường Phú Lâm</button>
+      </div>
+
+      <div class="archive-search-box">
+        <span class="archive-search-icon">🔍</span>
+        <input id="artifactSearchInput" type="search" class="archive-search-input"
+          placeholder="Tìm theo tên, mã hồ sơ, năm lịch sử..." aria-label="Tìm kiếm hiện vật" />
+      </div>
     </div>
 
     <div id="artifactsGrid" class="artifacts-grid"></div>
   </section>
 
-  <!-- 5. GÓC TƯƠNG TÁC: TRẮC NGHIỆM & SỔ VÀNG LƯU NIỆM -->
-  <section id="tuong-tac" class="section-block" style="padding-top: 2rem;">
+  <!-- PHÂN KHU V: SINH HOẠT CHÍNH TRỊ - TRẮC NGHIỆM & SỔ VÀNG -->
+  <section id="tuong-tac" class="section-block section-divider" data-cms-edit="interactive"
+    data-cms-label="Trắc nghiệm & Sổ vàng">
     <div class="section-header">
-      <div class="section-kicker">★ Hoạt Động Giáo Dục & Lan Tỏa Cộng Đồng</div>
-      <h2 class="section-title">Đố Vui Tìm Hiểu & Sổ Vàng Lưu Niệm Trực Tuyến</h2>
+      <div class="section-index-pill">PHÂN KHU IV • SINH HOẠT CHÍNH TRỊ & LAN TỎA CỘNG ĐỒNG</div>
+      <h2 class="section-title">Tìm Hiểu Tư Tưởng Hồ Chí Minh & Sổ Vàng Lưu Niệm Điện Tử</h2>
       <p class="section-subtitle">
-        Hai tính năng giúp Ban Giám Hiệu và Phường Phú Lâm thu hút hàng ngàn lượt học sinh, phụ huynh và đoàn viên tham
-        gia thực chất (có số liệu thống kê báo cáo).
+        Công cụ phục vụ sinh hoạt chi bộ, sinh hoạt Đoàn – Đội dưới cờ và tiết học lịch sử địa phương, có thống kê và
+        xuất dữ liệu báo cáo Ban Giám Hiệu cùng Đảng ủy Phường Phú Lâm.
       </p>
     </div>
 
     <div class="dual-interactive-grid">
-      <!-- Cột Trái: Mini-game Trắc nghiệm -->
+      <!-- Cột Trái: Trắc nghiệm Nhận thức Chính trị -->
       <div class="interactive-panel">
-        <span
-          style="font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold-primary); font-weight: 700;">
-          🎯 Trắc nghiệm Tương tác
-        </span>
-        <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 0.35rem 0 1.25rem;">
-          Tìm Hiểu Về Bác Hồ & Không Gian Văn Hóa
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.35rem;">
+          <span
+            style="font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold-bright); font-weight: 700;">
+            ★ Trắc nghiệm Nhận thức Lịch sử & Tư tưởng
+          </span>
+          <button type="button" class="cms-btn-sm" onclick="openCmsStudio('interactive')">✏️ Sửa bộ câu hỏi</button>
+        </div>
+        <h3
+          style="font-family: var(--font-serif); font-size: 1.45rem; margin-bottom: 1.15rem; color: var(--text-light);">
+          Học Tập Và Làm Theo Tư Tưởng, Đạo Đức, Phong Cách Hồ Chí Minh
         </h3>
-        <div id="quizContainer"></div>
+        <div id="quizContainer" style="flex:1;"></div>
       </div>
 
       <!-- Cột Phải: Sổ vàng lưu niệm -->
       <div class="interactive-panel">
-        <span
-          style="font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold-primary); font-weight: 700;">
-          ✍️ Sổ Vàng Lưu Niệm
-        </span>
-        <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 0.35rem 0 1rem;">
-          Gửi Cảm Nghĩ Tham Quan Bảo Tàng
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.35rem;">
+          <span
+            style="font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold-bright); font-weight: 700;">
+            ✍️ Sổ Vàng Truyền Thống Điện Tử
+          </span>
+          <button type="button" class="cms-btn-sm" onclick="exportGuestbookCSV()"
+            title="Tải danh sách cảm nghĩ về máy tính (CSV/Excel)">
+            📥 Xuất báo cáo Excel/CSV
+          </button>
+        </div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.45rem; margin-bottom: 1rem; color: var(--text-light);">
+          Ghi Sổ Vàng Quyết Tâm & Cảm Nghĩ Tham Quan
         </h3>
 
         <form id="guestbookForm" class="guestbook-form">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
-            <input id="guestName" class="input-field" type="text" placeholder="Họ và tên của bạn *" required />
-            <input id="guestRole" class="input-field" type="text"
-              placeholder="Đơn vị (VD: Lớp 9A / Đoàn Phường Phú Lâm)" />
+          <div class="cms-grid-2" style="gap: 0.75rem;">
+            <div class="form-group">
+              <label class="form-label" for="guestName">Họ và tên đảng viên / giáo viên / học sinh *</label>
+              <input id="guestName" class="input-field" type="text" placeholder="VD: Nguyễn Văn An" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="guestRole">Chi bộ / Lớp / Đơn vị công tác</label>
+              <input id="guestRole" class="input-field" type="text"
+                placeholder="VD: Chi bộ Giáo viên / Lớp 12A1 / Đoàn Phường" />
+            </div>
           </div>
-          <textarea id="guestMessage" class="input-field" rows="2"
-            placeholder="Chia sẻ cảm nghĩ hoặc lời hứa học tập và làm theo lời Bác... *" required></textarea>
+          <div class="form-group">
+            <label class="form-label" for="guestMessage">Cảm nghĩ hoặc bản đăng ký làm theo lời Bác *</label>
+            <textarea id="guestMessage" class="input-field" rows="2"
+              placeholder="Chia sẻ cảm nghĩ hoặc lời hứa rèn luyện theo tư tưởng, đạo đức, phong cách Hồ Chí Minh..."
+              required></textarea>
+          </div>
           <button type="submit" class="btn-primary" style="justify-content: center; padding: 0.75rem;">
-            Ghi vào Sổ Vàng Lưu Niệm
+            Ghi vào Sổ Vàng Truyền Thống
           </button>
         </form>
 
@@ -383,57 +360,7 @@
     </div>
   </section>
 
-  <!-- 6. BẢNG HƯỚNG DẪN SỐ HÓA TỪ PHÒNG THẬT LÊN ONLINE (DÀNH CHO BẠN BÁO CÁO BGH & PHƯỜNG) -->
-  <section id="lo-trinh" class="section-block" style="padding-top: 1rem;">
-    <div
-      style="background: linear-gradient(145deg, #2d1511, #190b08); border: 2px solid var(--gold-primary); border-radius: 20px; padding: 2.5rem;">
-      <div class="section-kicker">📋 Quy trình chuyển đổi từ Phòng thật sang Bản chính thức</div>
-      <h2 style="font-family: var(--font-serif); font-size: 1.85rem; margin-bottom: 1rem;">
-        3 Bước Đơn Giản Để Hoàn Thiện Bảo Tàng Của Trường Bạn
-      </h2>
-      <p style="color: var(--text-light-muted); margin-bottom: 1.75rem; max-width: 75ch;">
-        Bản mẫu (Prototype) này đã có đầy đủ khung giao diện, tính năng xoay 4 vách, thuyết minh âm thanh, trắc nghiệm
-        và sổ vàng. Để biến thành bản chính thức của trường trình Phường Phú Lâm, bạn chỉ cần:
-      </p>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
-        <div
-          style="background: rgba(0,0,0,0.35); border: 1px solid var(--gold-muted); padding: 1.35rem; border-radius: 12px;">
-          <strong style="color: var(--gold-bright); font-size: 1.05rem; display: block; margin-bottom: 0.5rem;">
-            Bước 1: Chụp ảnh bằng Điện thoại
-          </strong>
-          <p style="font-size: 0.88rem; color: var(--text-light-muted);">
-            Đứng giữa phòng bảo tàng thật của trường, chụp 4 bức ảnh ngang của 4 vách tường (hoặc dùng chế độ Panorama
-            trên iPhone/Samsung) và chụp cận cảnh 8–10 hiện vật/bảng trích dẫn tiêu biểu.
-          </p>
-        </div>
-
-        <div
-          style="background: rgba(0,0,0,0.35); border: 1px solid var(--gold-muted); padding: 1.35rem; border-radius: 12px;">
-          <strong style="color: var(--gold-bright); font-size: 1.05rem; display: block; margin-bottom: 0.5rem;">
-            Bước 2: Thay ảnh & Tên Trường vào Web
-          </strong>
-          <p style="font-size: 0.88rem; color: var(--text-light-muted);">
-            Gửi các bức ảnh đó vào thư mục này, mình sẽ lắp thẳng ảnh thật của phòng bảo tàng trường bạn vào khung 360°
-            và cập nhật đúng tên trường, logo trường cùng các hoạt động với Phường Phú Lâm.
-          </p>
-        </div>
-
-        <div
-          style="background: rgba(0,0,0,0.35); border: 1px solid var(--gold-muted); padding: 1.35rem; border-radius: 12px;">
-          <strong style="color: var(--gold-bright); font-size: 1.05rem; display: block; margin-bottom: 0.5rem;">
-            Bước 3: In Mã QR Dán Tại Phòng Thật & Cổng Trường
-          </strong>
-          <p style="font-size: 0.88rem; color: var(--text-light-muted);">
-            Đưa web lên tên miền của trường (không cần GPU, chạy nhẹ trên mọi hosting thông thường). In bảng mã QR đặt
-            tại phòng bảo tàng và gửi link cho UBND/Đoàn Phường Phú Lâm.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MODAL CHI TIẾT HIỆN VẬT -->
+  <!-- MODAL CHI TIẾT HIỆN VẬT & MÃ QR -->
   <div id="artifactModal" class="modal-backdrop" onclick="if(event.target === this) closeArtifactModal()">
     <div class="modal-content">
       <button class="modal-close" onclick="closeArtifactModal()" title="Đóng">✕</button>
@@ -441,12 +368,84 @@
     </div>
   </div>
 
+  <!-- =================================================================
+       TRÌNH QUẢN TRỊ & XÂY DỰNG BẢO TÀNG KHÔNG CẦN CODE (NO-CODE STUDIO)
+       ================================================================= -->
+  <div id="cmsStudioDrawer" class="cms-drawer-backdrop" onclick="if(event.target === this) closeCmsStudio()">
+    <aside class="cms-studio-panel" aria-label="Trình Quản trị Bảo tàng No-Code">
+      <div class="cms-header">
+        <div class="cms-header-title">
+          <span style="font-size: 1.5rem;">🛠️</span>
+          <div>
+            <h2>Trình Xây Dựng Bảo Tàng Số (No-Code Studio)</h2>
+            <p style="font-size: 0.75rem; color: var(--text-light-muted);">
+              Chỉnh sửa toàn bộ nội dung, hình ảnh 4 vách 360°, hiện vật, biên niên sử và câu hỏi mà không cần biết lập
+              trình.
+            </p>
+          </div>
+        </div>
+        <div class="cms-header-actions">
+          <a href="admin.html" class="cms-btn-sm"
+            style="text-decoration:none; background:rgba(217,169,76,0.18); color:var(--gold-bright);">
+            🖥️ Mở Bản Toàn Màn Hình
+          </a>
+          <button type="button" class="modal-close" style="position:static;" onclick="closeCmsStudio()"
+            title="Đóng">✕</button>
+        </div>
+      </div>
+
+      <!-- Thanh chuyển Tab Quản trị -->
+      <div class="cms-tabs-nav" id="cmsTabsNav">
+        <button type="button" class="cms-tab-btn active" data-tab="general">1. Đảng Bộ & Sảnh Chính</button>
+        <button type="button" class="cms-tab-btn" data-tab="walls">2. Phòng 360° (4 Vách)</button>
+        <button type="button" class="cms-tab-btn" data-tab="timeline">3. Biên Niên Sử</button>
+        <button type="button" class="cms-tab-btn" data-tab="artifacts">4. Kho Hiện Vật & Ảnh</button>
+        <button type="button" class="cms-tab-btn" data-tab="interactive">5. Trắc Nghiệm & Sổ Vàng</button>
+        <button type="button" class="cms-tab-btn" data-tab="publish">6. Sao Lưu & Xuất Bản</button>
+      </div>
+
+      <!-- Nội dung Form No-Code động -->
+      <div id="cmsStudioBody" class="cms-body"></div>
+
+      <!-- Chân trang Studio -->
+      <div class="cms-footer">
+        <div style="font-size: 0.78rem; color: var(--text-light-muted);">
+          💡 Mọi thay đổi được tự động áp dụng ngay lập tức. Bạn có thể xuất file JSON để lưu trữ vĩnh viễn.
+        </div>
+        <div style="display: flex; gap: 0.65rem;">
+          <button type="button" class="cms-btn-sm" onclick="exportMuseumJson()">💾 Tải File Cấu Hình (.json)</button>
+          <button type="button" class="btn-primary" style="padding: 0.55rem 1.25rem; font-size: 0.84rem;"
+            onclick="saveAndCloseCms()">
+            ✔ Lưu & Xem Bảo Tàng
+          </button>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Thông báo Toast khi lưu -->
+  <div id="cmsToast" class="cms-toast">✔ Đã lưu thay đổi vào Bảo tàng Số!</div>
+
   <!-- CHÂN TRANG -->
   <footer class="site-footer">
-    <p style="color: var(--gold-bright); font-family: var(--font-serif); font-size: 1.1rem; margin-bottom: 0.4rem;">
-      KHÔNG GIAN VĂN HÓA HỒ CHÍ MINH TRỰC TUYẾN – TRƯỜNG THPT MẠC ĐĨNH CHI & PHƯỜNG PHÚ LÂM
-    </p>
-    <p>Thực hiện: Ban Truyền Thông Trường THPT Mạc Đĩnh Chi • Giải pháp Bảo tàng Số Tương tác (Hybrid 360° & Digital Exhibition)</p>
+    <div class="footer-inner">
+      <div>
+        <p id="cmsFooterTitle"
+          style="color: var(--gold-bright); font-family: var(--font-serif); font-size: 1.08rem; font-weight: 700; margin-bottom: 0.35rem;">
+          KHÔNG GIAN VĂN HÓA HỒ CHÍ MINH TRỰC TUYẾN – CHI BỘ TRƯỜNG THPT MẠC ĐĨNH CHI & ĐẢNG BỘ PHƯỜNG PHÚ LÂM
+        </p>
+        <p id="cmsFooterSub">
+          Thực hiện: Ban Truyền Thông & Chi đoàn Giáo viên Trường THPT Mạc Đĩnh Chi • Hệ thống Bảo tàng Số & Quản trị
+          No-Code
+        </p>
+      </div>
+      <div style="display:flex; gap:0.65rem; flex-wrap:wrap;">
+        <button type="button" class="cms-btn-sm" onclick="openCmsStudio('general')">🛠️ Mở Trình Quản Trị
+          No-Code</button>
+        <a href="admin.html" class="cms-btn-sm" style="text-decoration:none;">🏛️ Bàn Xây Dựng Bảo Tàng (Full
+          Studio)</a>
+      </div>
+    </div>
   </footer>
 
   <script src="app.js"></script>
