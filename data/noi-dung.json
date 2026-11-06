@@ -1,0 +1,255 @@
+{
+  "version": 1,
+  "updatedAt": "2026-11-06T20:00:00+07:00",
+  "settings": {
+    "siteTitle": "Không gian văn hóa Hồ Chí Minh",
+    "unitName": "Trường THPT Mạc Đĩnh Chi",
+    "partnerName": "Phường Phú Lâm, Thành phố Hồ Chí Minh",
+    "intro": "Không gian văn hóa Hồ Chí Minh trực tuyến do Trường THPT Mạc Đĩnh Chi phối hợp với Phường Phú Lâm xây dựng, nhằm góp phần thực hiện Chỉ thị số 05-CT/TW ngày 15/5/2016 của Bộ Chính trị (khóa XII) và Kết luận số 01-KL/TW ngày 18/5/2021 của Bộ Chính trị (khóa XIII) về đẩy mạnh học tập và làm theo tư tưởng, đạo đức, phong cách Hồ Chí Minh. Thầy cô, học sinh và nhân dân có thể tham quan mô hình phòng trưng bày, đọc tư liệu số, gửi bài viết cảm nhận và tìm hiểu về cuộc đời, sự nghiệp của Chủ tịch Hồ Chí Minh.",
+    "noticeBanner": "Bản thử nghiệm – nội dung đang được Cấp ủy rà soát, đối chiếu nguồn trước khi chính thức đưa vào sử dụng.",
+    "heroImage": "",
+    "publicUrl": "",
+    "kioskIdleSeconds": 120,
+    "allowSubmissions": true,
+    "quizQuestionCount": 10,
+    "onlyVerified": false,
+    "footerText": "Trường THPT Mạc Đĩnh Chi phối hợp Phường Phú Lâm thực hiện. Nguồn trích dẫn được ghi kèm từng tư liệu."
+  },
+  "quotes": [
+    {
+      "id": "q1",
+      "text": "Non sông Việt Nam có trở nên tươi đẹp hay không, dân tộc Việt Nam có bước tới đài vinh quang để sánh vai với các cường quốc năm châu được hay không, chính là nhờ một phần lớn ở công học tập của các em.",
+      "source": "Thư gửi các học sinh nhân ngày khai trường đầu tiên của nước Việt Nam Dân chủ Cộng hòa, tháng 9/1945 – Hồ Chí Minh Toàn tập, tập 4",
+      "visible": true,
+      "verified": false
+    },
+    {
+      "id": "q2",
+      "text": "Vì lợi ích mười năm thì phải trồng cây, vì lợi ích trăm năm thì phải trồng người.",
+      "source": "Bài nói chuyện tại lớp học chính trị của giáo viên, ngày 13/9/1958",
+      "visible": true,
+      "verified": false
+    },
+    {
+      "id": "q3",
+      "text": "Không có gì quý hơn độc lập, tự do!",
+      "source": "Lời kêu gọi đồng bào và chiến sĩ cả nước, ngày 17/7/1966",
+      "visible": true,
+      "verified": false
+    },
+    {
+      "id": "q4",
+      "text": "Dân ta phải biết sử ta, cho tường gốc tích nước nhà Việt Nam.",
+      "source": "Lịch sử nước ta (diễn ca), năm 1942",
+      "visible": true,
+      "verified": false
+    },
+    {
+      "id": "q5",
+      "text": "Bồi dưỡng thế hệ cách mạng cho đời sau là một việc rất quan trọng và rất cần thiết.",
+      "source": "Di chúc của Chủ tịch Hồ Chí Minh – Hồ Chí Minh Toàn tập, tập 15",
+      "visible": true,
+      "verified": false
+    }
+  ],
+  "zones": [
+    {
+      "id": "z1",
+      "name": "Khu trang trọng – Tượng Chủ tịch Hồ Chí Minh",
+      "position": "back",
+      "description": "Khu vực trung tâm, trang nghiêm nhất của phòng trưng bày: tượng Chủ tịch Hồ Chí Minh đặt trên bục, phía sau là cờ Đảng, cờ Tổ quốc. Đây là nơi tổ chức dâng hoa, sinh hoạt chuyên đề và lễ kết nạp đoàn viên.",
+      "exhibits": "Tượng Chủ tịch Hồ Chí Minh\nCờ Đảng, cờ Tổ quốc\nBảng trích lời Bác dạy",
+      "image": "",
+      "bookId": "b2",
+      "source": "Mô tả mẫu – Bộ phận số hóa thay bằng mô tả và ảnh chụp thực tế của phòng.",
+      "visible": true,
+      "verified": false
+    },
+    {
+      "id": "z2",
+      "name": "Vách tư liệu – Quê hương và hành trình tìm đường cứu nước",
+      "position": "left",
+      "description": "Hệ thống ảnh tư liệu về quê hương Kim Liên (Nam Đàn, Nghệ An), hành trình ra đi tìm đường cứu nước từ Bến Nhà Rồng (5/6/1911) đến ngày trở về Tổ quốc (28/1/1941) và ngày đọc Tuyên ngôn Độc lập (2/9/1945).",
+      "exhibits": "Ảnh quê nội Làng Sen và quê ngoại Hoàng Trù\nBản đồ hành trình tìm đường cứu nước\nẢnh tư liệu Quảng trường Ba Đình ngày 2/9/1945",
+      "image": "",
+      "bookId": "b1",
+      "source": "Mô tả mẫu – Bộ phận số hóa thay bằng mô tả và ảnh chụp thực tế của phòng.",
+      "visible": true,
+      "verified": false
+    },
+    {
+      "id": "z3",
+      "name": "Tủ sách Hồ Chí Minh",
+      "position": "right",
+      "description": "Tủ sách gồm các tác phẩm của Chủ tịch Hồ Chí Minh và sách viết về Người. Các đầu sách đã số hóa có thể đọc ngay tại mục Sách online.",
+      "exhibits": "Tác phẩm của Chủ tịch Hồ Chí Minh\nSách viết về Chủ tịch Hồ Chí Minh\nTài liệu học tập chuyên đề hằng năm",
+      "image": "",
+      "bookId": "b5",
+      "source": "Mô tả mẫu – Bộ phận số hóa thay bằng mô tả và ảnh chụp thực tế của phòng.",
+      "visible": true,
+      "verified": false
+    },
+    {
+      "id": "z4",
+      "name": "Tủ hiện vật trung tâm",
+      "position": "center",
+      "description": "Tủ kính đặt giữa phòng trưng bày các mô hình, hiện vật phục chế giúp học sinh quan sát trực quan.",
+      "exhibits": "Mô hình, hiện vật phục chế (bổ sung theo thực tế)",
+      "image": "",
+      "bookId": "",
+      "source": "Mô tả mẫu – Bộ phận số hóa thay bằng mô tả và ảnh chụp thực tế của phòng.",
+      "visible": true,
+      "verified": false
+    },
+    {
+      "id": "z5",
+      "name": "Góc Học tập và làm theo Bác",
+      "position": "front",
+      "description": "Khu vực giới thiệu hoạt động học tập và làm theo tư tưởng, đạo đức, phong cách Hồ Chí Minh của thầy và trò Trường THPT Mạc Đĩnh Chi và Phường Phú Lâm; có mã QR dẫn đến trang trực tuyến này.",
+      "exhibits": "Bảng ảnh hoạt động của nhà trường và phường\nGương điển hình học tập và làm theo Bác\nMã QR truy cập Không gian văn hóa Hồ Chí Minh trực tuyến",
+      "image": "",
+      "bookId": "",
+      "source": "Mô tả mẫu – Bộ phận số hóa thay bằng mô tả và ảnh chụp thực tế của phòng.",
+      "visible": true,
+      "verified": false
+    }
+  ],
+  "books": [
+    {
+      "id": "b1",
+      "title": "Tóm tắt tiểu sử Chủ tịch Hồ Chí Minh",
+      "author": "Ban biên tập",
+      "year": "",
+      "category": "Tiểu sử",
+      "summary": "Những mốc son trong cuộc đời và sự nghiệp cách mạng của Chủ tịch Hồ Chí Minh.",
+      "cover": "",
+      "type": "text",
+      "pages": [
+        { "heading": "1890 – 1911: Quê hương và tuổi trẻ", "body": "Ngày 19/5/1890: Chủ tịch Hồ Chí Minh (tên khai sinh là Nguyễn Sinh Cung) sinh tại làng Hoàng Trù, quê ngoại, xã Kim Liên, huyện Nam Đàn, tỉnh Nghệ An. Quê nội của Người là làng Kim Liên (Làng Sen) cùng xã.\n\nNăm 1910: Người dạy học tại Trường Dục Thanh (Phan Thiết).\n\nNgày 5/6/1911: Với tên Văn Ba, người thanh niên Nguyễn Tất Thành làm phụ bếp trên tàu Amiral Latouche-Tréville, rời Bến Nhà Rồng (Sài Gòn) ra đi tìm đường cứu nước." },
+        { "heading": "1919 – 1930: Tìm thấy con đường cứu nước", "body": "Ngày 18/6/1919: Thay mặt những người Việt Nam yêu nước tại Pháp, Người ký tên Nguyễn Ái Quốc gửi Bản Yêu sách của nhân dân An Nam tới Hội nghị Véc-xây.\n\nTháng 7/1920: Người đọc Sơ thảo lần thứ nhất những luận cương về vấn đề dân tộc và vấn đề thuộc địa của V.I. Lênin.\n\nTháng 12/1920: Tại Đại hội Tua, Người bỏ phiếu tán thành Quốc tế Cộng sản, tham gia sáng lập Đảng Cộng sản Pháp.\n\nTháng 6/1925: Người thành lập Hội Việt Nam Cách mạng Thanh niên tại Quảng Châu (Trung Quốc). Năm 1927, tác phẩm Đường Kách mệnh được xuất bản.\n\nNgày 3/2/1930: Người chủ trì Hội nghị hợp nhất các tổ chức cộng sản, thành lập Đảng Cộng sản Việt Nam." },
+        { "heading": "1941 – 1945: Lãnh đạo Cách mạng Tháng Tám", "body": "Ngày 28/1/1941: Sau 30 năm hoạt động ở nước ngoài, Người trở về Tổ quốc, sống và làm việc tại Pác Bó (Hà Quảng, Cao Bằng).\n\nTháng 5/1941: Người chủ trì Hội nghị lần thứ tám Ban Chấp hành Trung ương Đảng, quyết định thành lập Mặt trận Việt Minh.\n\nTháng 8/1942 – tháng 9/1943: Người bị chính quyền Tưởng Giới Thạch bắt giam ở Quảng Tây (Trung Quốc); trong thời gian này Người viết tập thơ Nhật ký trong tù.\n\nNgày 2/9/1945: Tại Quảng trường Ba Đình (Hà Nội), Người đọc Tuyên ngôn Độc lập, khai sinh nước Việt Nam Dân chủ Cộng hòa." },
+        { "heading": "1946 – 1969: Lãnh đạo hai cuộc kháng chiến", "body": "Ngày 19/12/1946: Người ra Lời kêu gọi toàn quốc kháng chiến.\n\nTháng 2/1951: Đại hội đại biểu toàn quốc lần thứ II của Đảng bầu Người làm Chủ tịch Ban Chấp hành Trung ương Đảng.\n\nNgày 10/5/1965: Người bắt đầu viết bản Di chúc.\n\nNgày 17/7/1966: Người ra Lời kêu gọi đồng bào và chiến sĩ cả nước với chân lý “Không có gì quý hơn độc lập, tự do!”.\n\nNgày 2/9/1969: Chủ tịch Hồ Chí Minh từ trần tại Hà Nội." },
+        { "heading": "Thành phố mang tên Bác", "body": "Ngày 2/7/1976: Quốc hội nước Cộng hòa xã hội chủ nghĩa Việt Nam quyết định đổi tên thành phố Sài Gòn – Gia Định thành Thành phố Hồ Chí Minh.\n\nNăm 1987: Tổ chức Giáo dục, Khoa học và Văn hóa của Liên hợp quốc (UNESCO) ra nghị quyết tôn vinh Chủ tịch Hồ Chí Minh là Anh hùng giải phóng dân tộc, Nhà văn hóa kiệt xuất của Việt Nam." }
+      ],
+      "pageImages": [],
+      "file": "",
+      "source": "Tổng hợp theo Hồ Chí Minh – Biên niên tiểu sử (NXB Chính trị quốc gia). Cần đối chiếu trước khi duyệt.",
+      "visible": true,
+      "verified": false
+    },
+    {
+      "id": "b2",
+      "title": "Thư gửi các học sinh (tháng 9/1945)",
+      "author": "Hồ Chí Minh",
+      "year": "1945",
+      "category": "Bác Hồ với giáo dục",
+      "summary": "Bức thư Chủ tịch Hồ Chí Minh gửi học sinh cả nước nhân ngày khai trường đầu tiên của nước Việt Nam Dân chủ Cộng hòa.",
+      "cover": "",
+      "type": "text",
+      "pages": [
+        { "heading": "Trích Thư gửi các học sinh", "body": "“Các em học sinh,\n\nNgày hôm nay là ngày khai trường đầu tiên ở nước Việt Nam Dân chủ Cộng hòa. Tôi đã tưởng tượng thấy trước mắt cái cảnh nhộn nhịp tưng bừng của ngày tựu trường ở khắp các nơi. Các em hết thảy đều vui vẻ vì sau mấy tháng giời nghỉ học, sau bao nhiêu cuộc chuyển biến khác thường, các em lại được gặp thầy gặp bạn.\n\nNhưng sung sướng hơn nữa, từ giờ phút này giở đi, các em bắt đầu được nhận một nền giáo dục hoàn toàn Việt Nam. (...)”" },
+        { "heading": "Lời căn dặn", "body": "“(...) Sau 80 năm giời nô lệ làm cho nước nhà bị yếu hèn, ngày nay chúng ta cần phải xây dựng lại cơ đồ mà tổ tiên đã để lại cho chúng ta, làm sao cho chúng ta theo kịp các nước khác trên hoàn cầu. Trong công cuộc kiến thiết đó, nước nhà trông mong chờ đợi ở các em rất nhiều.\n\nNon sông Việt Nam có trở nên tươi đẹp hay không, dân tộc Việt Nam có bước tới đài vinh quang để sánh vai với các cường quốc năm châu được hay không, chính là nhờ một phần lớn ở công học tập của các em. (...)”\n\nHỒ CHÍ MINH" }
+      ],
+      "pageImages": [],
+      "file": "",
+      "source": "Hồ Chí Minh Toàn tập, tập 4, NXB Chính trị quốc gia Sự thật, 2011. Cần đối chiếu số trang trước khi duyệt.",
+      "visible": true,
+      "verified": false
+    },
+    {
+      "id": "b3",
+      "title": "Tuyên ngôn Độc lập (2/9/1945)",
+      "author": "Hồ Chí Minh",
+      "year": "1945",
+      "category": "Tác phẩm",
+      "summary": "Văn kiện lịch sử khai sinh nước Việt Nam Dân chủ Cộng hòa, do Chủ tịch Hồ Chí Minh đọc tại Quảng trường Ba Đình ngày 2/9/1945.",
+      "cover": "",
+      "type": "text",
+      "pages": [
+        { "heading": "Trích Tuyên ngôn Độc lập – Phần mở đầu", "body": "“Hỡi đồng bào cả nước,\n\nTất cả mọi người đều sinh ra có quyền bình đẳng. Tạo hóa cho họ những quyền không ai có thể xâm phạm được; trong những quyền ấy, có quyền được sống, quyền tự do và quyền mưu cầu hạnh phúc. (...)”" },
+        { "heading": "Trích Tuyên ngôn Độc lập – Phần kết", "body": "“(...) Nước Việt Nam có quyền hưởng tự do và độc lập, và sự thật đã thành một nước tự do độc lập. Toàn thể dân tộc Việt Nam quyết đem tất cả tinh thần và lực lượng, tính mạng và của cải để giữ vững quyền tự do, độc lập ấy.”" }
+      ],
+      "pageImages": [],
+      "file": "",
+      "source": "Hồ Chí Minh Toàn tập, tập 4, NXB Chính trị quốc gia Sự thật, 2011. Cần đối chiếu số trang trước khi duyệt.",
+      "visible": true,
+      "verified": false
+    },
+    {
+      "id": "b4",
+      "title": "Đường Kách mệnh (1927) – Tư cách một người cách mệnh",
+      "author": "Nguyễn Ái Quốc",
+      "year": "1927",
+      "category": "Tác phẩm",
+      "summary": "Tập hợp bài giảng của Nguyễn Ái Quốc tại các lớp huấn luyện cán bộ ở Quảng Châu (1925–1927). Trích phần “Tư cách một người cách mệnh”.",
+      "cover": "",
+      "type": "text",
+      "pages": [
+        { "heading": "Tự mình phải", "body": "Cần kiệm.\nHòa mà không tư.\nCả quyết sửa lỗi mình.\nCẩn thận mà không nhút nhát.\nHay hỏi.\nNhẫn nại (chịu khó).\nHay nghiên cứu, xem xét.\nVị công vong tư.\nKhông hiếu danh, không kiêu ngạo.\nNói thì phải làm.\nGiữ chủ nghĩa cho vững.\nHy sinh.\nÍt lòng tham muốn về vật chất.\nBí mật." },
+        { "heading": "Đối với người phải – Làm việc phải", "body": "Đối với người phải:\nVới từng người thì khoan thứ.\nVới đoàn thể thì nghiêm.\nCó lòng bày vẽ cho người.\nTrực mà không táo bạo.\nHay xem xét người.\n\nLàm việc phải:\nXem xét hoàn cảnh kỹ càng.\nQuyết đoán.\nDũng cảm.\nPhục tùng đoàn thể." }
+      ],
+      "pageImages": [],
+      "file": "",
+      "source": "Hồ Chí Minh Toàn tập, tập 2, NXB Chính trị quốc gia Sự thật, 2011. Cần đối chiếu số trang trước khi duyệt.",
+      "visible": true,
+      "verified": false
+    },
+    {
+      "id": "b5",
+      "title": "Nhật ký trong tù – Trích một số bài thơ",
+      "author": "Hồ Chí Minh",
+      "year": "1942–1943",
+      "category": "Tác phẩm",
+      "summary": "Tập thơ chữ Hán Người viết trong thời gian bị chính quyền Tưởng Giới Thạch giam giữ ở Quảng Tây (8/1942 – 9/1943).",
+      "cover": "",
+      "type": "text",
+      "pages": [
+        { "heading": "Ngắm trăng (Vọng nguyệt)", "body": "Phiên âm:\nNgục trung vô tửu diệc vô hoa,\nĐối thử lương tiêu nại nhược hà?\nNhân hướng song tiền khán minh nguyệt,\nNguyệt tòng song khích khán thi gia.\n\nDịch thơ (Nam Trân):\nTrong tù không rượu cũng không hoa,\nCảnh đẹp đêm nay, khó hững hờ;\nNgười ngắm trăng soi ngoài cửa sổ,\nTrăng nhòm khe cửa ngắm nhà thơ." },
+        { "heading": "Đi đường (Tẩu lộ)", "body": "Dịch thơ (Nam Trân):\nĐi đường mới biết gian lao,\nNúi cao rồi lại núi cao trập trùng;\nNúi cao lên đến tận cùng,\nThu vào tầm mắt muôn trùng nước non." },
+        { "heading": "Nghe tiếng giã gạo (Văn thung mễ)", "body": "Dịch thơ (Nam Trân):\nGạo đem vào giã bao đau đớn,\nGạo giã xong rồi, trắng tựa bông;\nSống ở trên đời người cũng vậy,\nGian nan rèn luyện mới thành công." }
+      ],
+      "pageImages": [],
+      "file": "",
+      "source": "Hồ Chí Minh Toàn tập, tập 3, NXB Chính trị quốc gia Sự thật, 2011. Cần đối chiếu số trang trước khi duyệt.",
+      "visible": true,
+      "verified": false
+    },
+    {
+      "id": "b6",
+      "title": "Di chúc của Chủ tịch Hồ Chí Minh – Trích",
+      "author": "Hồ Chí Minh",
+      "year": "1965–1969",
+      "category": "Tác phẩm",
+      "summary": "Những lời căn dặn thiêng liêng của Chủ tịch Hồ Chí Minh đối với toàn Đảng, toàn dân.",
+      "cover": "",
+      "type": "text",
+      "pages": [
+        { "heading": "Về đoàn viên và thanh niên", "body": "“Đoàn viên và thanh niên ta nói chung là tốt, mọi việc đều hăng hái xung phong, không ngại khó khăn, có chí tiến thủ. Đảng cần phải chăm lo giáo dục đạo đức cách mạng cho họ, đào tạo họ thành những người thừa kế xây dựng chủ nghĩa xã hội vừa “hồng” vừa “chuyên”.\n\nBồi dưỡng thế hệ cách mạng cho đời sau là một việc rất quan trọng và rất cần thiết.”" },
+        { "heading": "Điều mong muốn cuối cùng", "body": "“Suốt đời tôi hết lòng hết sức phục vụ Tổ quốc, phục vụ cách mạng, phục vụ nhân dân. Nay dù phải từ biệt thế giới này, tôi không có điều gì phải hối hận, chỉ tiếc là tiếc rằng không được phục vụ lâu hơn nữa, nhiều hơn nữa. (...)\n\nĐiều mong muốn cuối cùng của tôi là: Toàn Đảng, toàn dân ta đoàn kết phấn đấu, xây dựng một nước Việt Nam hòa bình, thống nhất, độc lập, dân chủ và giàu mạnh, và góp phần xứng đáng vào sự nghiệp cách mạng thế giới.”" }
+      ],
+      "pageImages": [],
+      "file": "",
+      "source": "Hồ Chí Minh Toàn tập, tập 15, NXB Chính trị quốc gia Sự thật, 2011. Cần đối chiếu số trang trước khi duyệt.",
+      "visible": true,
+      "verified": false
+    }
+  ],
+  "articles": [],
+  "quiz": [
+    { "id": "t1", "question": "Chủ tịch Hồ Chí Minh sinh ngày, tháng, năm nào?", "options": ["19/5/1890", "2/9/1890", "19/5/1911", "3/2/1890"], "answer": 0, "explanation": "Chủ tịch Hồ Chí Minh sinh ngày 19/5/1890.", "visible": true, "verified": false },
+    { "id": "t2", "question": "Tên khai sinh của Chủ tịch Hồ Chí Minh là gì?", "options": ["Nguyễn Tất Thành", "Nguyễn Ái Quốc", "Nguyễn Sinh Cung", "Văn Ba"], "answer": 2, "explanation": "Tên khai sinh của Người là Nguyễn Sinh Cung; khi đi học lấy tên Nguyễn Tất Thành.", "visible": true, "verified": false },
+    { "id": "t3", "question": "Quê hương của Chủ tịch Hồ Chí Minh ở đâu?", "options": ["Xã Kim Liên, huyện Nam Đàn, tỉnh Nghệ An", "Huyện Hương Sơn, tỉnh Hà Tĩnh", "Huyện Hà Quảng, tỉnh Cao Bằng", "Thành phố Phan Thiết, tỉnh Bình Thuận"], "answer": 0, "explanation": "Quê nội của Người là làng Kim Liên (Làng Sen), quê ngoại là làng Hoàng Trù, đều thuộc xã Kim Liên, huyện Nam Đàn, tỉnh Nghệ An.", "visible": true, "verified": false },
+    { "id": "t4", "question": "Ngày 5/6/1911, người thanh niên Nguyễn Tất Thành rời Bến Nhà Rồng ra đi tìm đường cứu nước trên con tàu nào?", "options": ["Tàu Đờ-lát-xơ", "Tàu Amiral Latouche-Tréville", "Tàu Pháp quốc", "Tàu Hải Phòng"], "answer": 1, "explanation": "Với tên Văn Ba, Người làm phụ bếp trên tàu Amiral Latouche-Tréville.", "visible": true, "verified": false },
+    { "id": "t5", "question": "Trước khi ra đi tìm đường cứu nước, Nguyễn Tất Thành từng dạy học ở trường nào?", "options": ["Trường Quốc học Huế", "Trường Dục Thanh (Phan Thiết)", "Trường Đông Kinh Nghĩa Thục", "Trường Tiểu học Pháp – Việt Vinh"], "answer": 1, "explanation": "Năm 1910, Người dạy học tại Trường Dục Thanh, Phan Thiết.", "visible": true, "verified": false },
+    { "id": "t6", "question": "Năm 1919, Nguyễn Ái Quốc gửi Bản Yêu sách của nhân dân An Nam tới hội nghị nào?", "options": ["Hội nghị Véc-xây", "Hội nghị Giơ-ne-vơ", "Đại hội Tua", "Hội nghị Pốt-xđam"], "answer": 0, "explanation": "Ngày 18/6/1919, Người gửi Bản Yêu sách của nhân dân An Nam tới Hội nghị Véc-xây.", "visible": true, "verified": false },
+    { "id": "t7", "question": "Đảng Cộng sản Việt Nam được thành lập ngày nào?", "options": ["19/5/1941", "3/2/1930", "2/9/1945", "6/1/1925"], "answer": 1, "explanation": "Ngày 3/2/1930, Nguyễn Ái Quốc chủ trì Hội nghị hợp nhất các tổ chức cộng sản, thành lập Đảng Cộng sản Việt Nam.", "visible": true, "verified": false },
+    { "id": "t8", "question": "Tác phẩm Đường Kách mệnh được xuất bản năm nào?", "options": ["1920", "1925", "1927", "1930"], "answer": 2, "explanation": "Đường Kách mệnh là tập hợp bài giảng của Nguyễn Ái Quốc tại Quảng Châu, xuất bản năm 1927.", "visible": true, "verified": false },
+    { "id": "t9", "question": "Ngày 28/1/1941, Nguyễn Ái Quốc trở về Tổ quốc tại địa điểm nào?", "options": ["Tân Trào, Tuyên Quang", "Pác Bó, Cao Bằng", "Định Hóa, Thái Nguyên", "Kim Liên, Nghệ An"], "answer": 1, "explanation": "Sau 30 năm hoạt động ở nước ngoài, Người về nước, sống và làm việc tại Pác Bó (Hà Quảng, Cao Bằng).", "visible": true, "verified": false },
+    { "id": "t10", "question": "Tập thơ Nhật ký trong tù được Chủ tịch Hồ Chí Minh viết bằng chữ gì?", "options": ["Chữ Quốc ngữ", "Chữ Nôm", "Chữ Hán", "Chữ Pháp"], "answer": 2, "explanation": "Nhật ký trong tù được viết bằng chữ Hán trong thời gian Người bị giam ở Quảng Tây (1942–1943).", "visible": true, "verified": false },
+    { "id": "t11", "question": "Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập ở đâu?", "options": ["Bến Nhà Rồng, Sài Gòn", "Quảng trường Ba Đình, Hà Nội", "Đình Tân Trào, Tuyên Quang", "Nhà hát Lớn, Hà Nội"], "answer": 1, "explanation": "Ngày 2/9/1945, tại Quảng trường Ba Đình, Hà Nội, Người đọc Tuyên ngôn Độc lập, khai sinh nước Việt Nam Dân chủ Cộng hòa.", "visible": true, "verified": false },
+    { "id": "t12", "question": "Câu nói “Không có gì quý hơn độc lập, tự do!” được Chủ tịch Hồ Chí Minh nêu trong văn kiện nào?", "options": ["Tuyên ngôn Độc lập (1945)", "Lời kêu gọi toàn quốc kháng chiến (1946)", "Lời kêu gọi đồng bào và chiến sĩ cả nước (17/7/1966)", "Di chúc (1969)"], "answer": 2, "explanation": "Câu nói nằm trong Lời kêu gọi đồng bào và chiến sĩ cả nước ngày 17/7/1966.", "visible": true, "verified": false },
+    { "id": "t13", "question": "Câu “Non sông Việt Nam có trở nên tươi đẹp hay không…” nằm trong văn bản nào của Bác?", "options": ["Thư gửi các học sinh nhân ngày khai trường đầu tiên (9/1945)", "Tuyên ngôn Độc lập (9/1945)", "Đường Kách mệnh (1927)", "Lời kêu gọi thi đua ái quốc (1948)"], "answer": 0, "explanation": "Đây là lời căn dặn trong Thư gửi các học sinh nhân ngày khai trường đầu tiên của nước Việt Nam Dân chủ Cộng hòa, tháng 9/1945.", "visible": true, "verified": false },
+    { "id": "t14", "question": "Thành phố Sài Gòn – Gia Định chính thức mang tên Thành phố Hồ Chí Minh từ ngày nào?", "options": ["30/4/1975", "2/7/1976", "2/9/1976", "19/5/1976"], "answer": 1, "explanation": "Ngày 2/7/1976, Quốc hội quyết định đổi tên thành phố Sài Gòn – Gia Định thành Thành phố Hồ Chí Minh.", "visible": true, "verified": false },
+    { "id": "t15", "question": "Chỉ thị số 05-CT/TW ngày 15/5/2016 của Bộ Chính trị có nội dung gì?", "options": ["Về đẩy mạnh học tập và làm theo tư tưởng, đạo đức, phong cách Hồ Chí Minh", "Về đổi mới căn bản, toàn diện giáo dục và đào tạo", "Về công tác phát triển đảng viên", "Về phát triển văn hóa đọc"], "answer": 0, "explanation": "Chỉ thị số 05-CT/TW của Bộ Chính trị (khóa XII) là về đẩy mạnh học tập và làm theo tư tưởng, đạo đức, phong cách Hồ Chí Minh.", "visible": true, "verified": false }
+  ]
+}

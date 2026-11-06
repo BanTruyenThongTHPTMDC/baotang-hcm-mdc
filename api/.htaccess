@@ -1,0 +1,7 @@
+# Chỉ cho phép gọi các tệp API; chặn tệp hàm dùng chung
+<Files "_chung.php">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+</Files>
+Options -Indexes

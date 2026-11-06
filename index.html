@@ -1,680 +1,223 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Không Gian Văn Hóa Hồ Chí Minh Trực Tuyến | Trường THPT Mạc Đĩnh Chi – Phường Phú Lâm</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Không gian văn hóa Hồ Chí Minh – Trường THPT Mạc Đĩnh Chi & Phường Phú Lâm</title>
+  <meta name="description" content="Không gian văn hóa Hồ Chí Minh trực tuyến – Trường THPT Mạc Đĩnh Chi phối hợp Phường Phú Lâm, Thành phố Hồ Chí Minh.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Noto+Serif:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body class="bg-pattern">
+<body>
+  <!-- Thanh báo đang xem bản nháp (chỉ hiện trên máy có bản nháp của trang quản trị) -->
+  <div id="draftBar" class="draft-bar" hidden>
+    Bạn đang xem <strong>bản nháp</strong> lưu trên máy này (chưa xuất bản).
+    <a href="?" id="draftBarExit">Xem bản chính thức</a>
+  </div>
+  <div id="noticeBanner" class="notice-banner" hidden></div>
 
-  <!-- THANH ĐIỀU HƯỚNG ĐỎ SON – VÀNG KIM -->
   <header class="site-header">
-    <div class="nav-container">
-      <a href="#top" class="brand-identity">
-        <div class="brand-emblem" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="#ffdf6b">
-            <path d="M12 2L14.85 8.65L22 9.25L16.55 13.95L18.2 21L12 17.25L5.8 21L7.45 13.95L2 9.25L9.15 8.65L12 2Z" />
-          </svg>
-        </div>
-        <div class="brand-text-group">
-          <span class="brand-sub">Trường THPT Mạc Đĩnh Chi • Phường Phú Lâm</span>
-          <span class="brand-title">Không Gian Văn Hóa Hồ Chí Minh</span>
-        </div>
-      </a>
-
-      <ul class="nav-links">
-        <li><a href="#lang-que-bac">🪷 Làng Quê Bác</a></li>
-        <li><a href="#mo-hinh-3d">🏛️ Mô Hình 3D</a></li>
-        <li><a href="#sach-online">📚 Sách Online</a></li>
-        <li><a href="#bai-viet-cam-nhan">✍️ Bài Viết Cảm Nhận</a></li>
-        <li><a href="#trac-nghiem-bac">🎯 Trắc Nghiệm Về Bác</a></li>
-      </ul>
-
-      <div class="nav-actions">
-        <button id="btnAudioGuide" class="btn-audio-guide" type="button" title="Bật/Tắt giọng đọc thuyết minh tự động">
-          <span class="audio-wave">
-            <span></span><span></span><span></span>
-          </span>
-          <span id="audioGuideLabel">Thuyết minh tự động</span>
-        </button>
-      </div>
+    <a class="brand" href="#/trang-chu" aria-label="Về trang chủ">
+      <span class="brand-emblem" aria-hidden="true">
+        <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#b3121a" stroke="#f3c64c" stroke-width="4"/><polygon points="50,18 58.8,40.6 83,41.6 64,56.7 70.6,80 50,66.8 29.4,80 36,56.7 17,41.6 41.2,40.6" fill="#ffd84d"/></svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-unit" id="brandUnit">Trường THPT Mạc Đĩnh Chi • Phường Phú Lâm</span>
+        <span class="brand-title" id="brandTitle">Không gian văn hóa Hồ Chí Minh</span>
+      </span>
+    </a>
+    <div class="header-actions">
+      <button type="button" class="btn-ghost" id="btnFullscreen" hidden>⛶ Toàn màn hình</button>
     </div>
   </header>
 
-  <!-- SẢNH CHÍNH ĐỎ - VÀNG KHÁNH TIẾT (HERO SECTION) -->
-  <section id="top" class="hero-section">
-    <div class="hero-container">
-      <div class="hero-copy">
-        <div class="location-badge">
-          <span>★</span> Trường THPT Mạc Đĩnh Chi • Phường Phú Lâm
-        </div>
-        <h1 class="hero-title">
-          Không Gian Văn Hóa Hồ Chí Minh
-          <span class="gold-highlight">Từ Làng Sen Quê Bác Đến Mái Trường Mạc Đĩnh Chi</span>
-        </h1>
+  <nav class="tabbar" aria-label="Các chuyên mục">
+    <a href="#/trang-chu" data-route="trang-chu" class="tab tab-home">Trang chủ</a>
+    <a href="#/mo-hinh-3d" data-route="mo-hinh-3d" class="tab"><b>1</b> Mô hình bảo tàng 3D</a>
+    <a href="#/sach-online" data-route="sach-online" class="tab"><b>2</b> Sách online</a>
+    <a href="#/bai-viet" data-route="bai-viet" class="tab"><b>3</b> Bài viết cảm nhận về Bác</a>
+    <a href="#/trac-nghiem" data-route="trac-nghiem" class="tab"><b>4</b> Trắc nghiệm tìm hiểu về Bác</a>
+  </nav>
 
-        <div class="hero-quote-box">
-          <p class="hero-quote-text">
-            “Vì lợi ích mười năm thì phải trồng cây, vì lợi ích trăm năm thì phải trồng người.”
-          </p>
-          <span class="hero-quote-author">— Chủ tịch Hồ Chí Minh</span>
-        </div>
-
-        <p class="hero-desc">
-          Cổng Bảo tàng Trực tuyến mang sắc <strong>Đỏ Son – Vàng Kim</strong> truyền thống hòa quyện cùng không gian <strong>Làng Sen quê Bác</strong>. Nơi thầy cô, học sinh <strong>Trường THPT Mạc Đĩnh Chi</strong> và nhân dân <strong>Phường Phú Lâm</strong> tham quan Mô hình Bảo tàng 3D, đọc Sách Online, gửi Bài viết cảm nhận và tham gia Trắc nghiệm tìm hiểu về Bác.
-        </p>
-
-        <div class="hero-cta-group">
-          <a href="#mo-hinh-3d" class="btn-primary">
-            <span>🏛️</span> Vào Mô Hình Bảo Tàng 3D
-          </a>
-          <a href="#sach-online" class="btn-secondary">
-            <span>📚</span> Đọc Sách Online
-          </a>
-          <a href="#bai-viet-cam-nhan" class="btn-secondary">
-            <span>✍️</span> Gửi Bài Cảm Nhận
-          </a>
-          <a href="#trac-nghiem-bac" class="btn-secondary">
-            <span>🎯</span> Làm Trắc Nghiệm
-          </a>
-        </div>
-      </div>
-
-      <!-- Khung 5 Chuyên mục Trọng tâm -->
-      <div class="hero-pillars-card">
-        <div style="font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gold-bright); font-weight: 800; margin-bottom: 0.85rem;">
-          ★ 5 Chuyên Mục Trọng Tâm Của Bảo Tàng Online
-        </div>
-
-        <a href="#lang-que-bac" class="pillar-item">
-          <div class="pillar-icon">🪷</div>
-          <div>
-            <strong style="color: var(--gold-bright); display: block; font-size: 0.96rem;">Không Gian Làng Sen Quê Bác (Kim Liên, Nghệ An)</strong>
-            <span style="font-size: 0.82rem; color: var(--text-gold-soft);">Mái nhà tranh 5 gian, lũy tre xanh và đầm sen hồng nơi hun đúc tâm hồn Người.</span>
-          </div>
-        </a>
-
-        <a href="#mo-hinh-3d" class="pillar-item">
-          <div class="pillar-icon">🏛️</div>
-          <div>
-            <strong style="color: var(--gold-bright); display: block; font-size: 0.96rem;">Mô Hình Bảo Tàng 3D & Phòng Truyền Thống 360°</strong>
-            <span style="font-size: 0.82rem; color: var(--text-gold-soft);">Sa bàn 3D xoay toàn cảnh 5 khu trưng bày kèm thuyết minh giọng đọc.</span>
-          </div>
-        </a>
-
-        <a href="#sach-online" class="pillar-item">
-          <div class="pillar-icon">📚</div>
-          <div>
-            <strong style="color: var(--gold-bright); display: block; font-size: 0.96rem;">Thư Viện Sách Online Lật Trang & Audio Book</strong>
-            <span style="font-size: 0.82rem; color: var(--text-gold-soft);">Đọc trực tuyến các tác phẩm của Bác và những câu chuyện kể về Bác.</span>
-          </div>
-        </a>
-
-        <a href="#bai-viet-cam-nhan" class="pillar-item">
-          <div class="pillar-icon">✍️</div>
-          <div>
-            <strong style="color: var(--gold-bright); display: block; font-size: 0.96rem;">Kho Bài Viết Cảm Nhận Về Bác (Học Sinh Đóng Góp)</strong>
-            <span style="font-size: 0.82rem; color: var(--text-gold-soft);">Học sinh gửi bài thu hoạch, cảm nhận trực tuyến có Giáo viên kiểm duyệt.</span>
-          </div>
-        </a>
-
-        <a href="#trac-nghiem-bac" class="pillar-item">
-          <div class="pillar-icon">🎯</div>
-          <div>
-            <strong style="color: var(--gold-bright); display: block; font-size: 0.96rem;">Trắc Nghiệm Tìm Hiểu Về Bác & Sổ Vàng Lưu Niệm</strong>
-            <span style="font-size: 0.82rem; color: var(--text-gold-soft);">Trả lời câu hỏi nhận Chứng nhận Đỏ – Vàng của Trường & Phường Phú Lâm.</span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- =====================================================================
-       PHẦN 1: KHÔNG GIAN LÀNG QUÊ CỦA BÁC (LÀNG SEN – KIM LIÊN, NAM ĐÀN, NGHỆ AN)
-       ===================================================================== -->
-  <section id="lang-que-bac" class="homeland-banner-section">
-    <div class="homeland-container">
-      <!-- Cột Trái: Câu chuyện & sắc màu quê hương Bác -->
-      <div>
-        <span class="homeland-badge">🎋 Cội nguồn Quê hương • Kim Liên, Nam Đàn, Nghệ An</span>
-        <h2 class="homeland-title">
-          Về Thăm Làng Sen Quê Bác – Nắng Vàng, Tre Xanh & Hương Sen Thuần Khiết
-        </h2>
-        <div class="homeland-poem-box">
-          “Quê hương nghĩa trọng tình cao,<br/>
-          Năm mươi năm ấy biết bao nhiêu tình!”<br/>
-          <span style="font-size: 0.8rem; font-style: normal; font-weight: 700; color: var(--red-imperial);">— Chủ tịch Hồ Chí Minh thăm lại quê nhà Kim Liên (1961)</span>
-        </div>
-        <p id="homelandDetailText" style="font-size: 0.96rem; color: var(--text-dark-muted); margin-bottom: 1.25rem; line-height: 1.7;">
-          Từ mái nhà tranh 5 gian mộc mạc dưới bóng tre xanh tại <strong>Làng Sen (quê nội)</strong> và <strong>Làng Hoàng Trù (quê ngoại)</strong>, cậu bé Nguyễn Sinh Cung đã lớn lên trong lời ru ví, giặm của mẹ Hoàng Thị Loan và truyền thống hiếu học của cha Nguyễn Sinh Sắc. Bấm vào 3 địa danh bên phải để nghe thuyết minh về quê hương của Người.
-        </p>
-        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-          <button class="btn-primary" type="button" onclick="speakHomelandCurrent()" style="background: var(--red-imperial); color: var(--gold-bright); border-color: var(--gold-primary);">
-            🔊 Nghe thuyết minh về Quê Bác
-          </button>
-          <a href="#mo-hinh-3d" class="btn-secondary" style="background: var(--village-bamboo); color: #fff; border-color: var(--village-bamboo);">
-            🏛️ Xem Khu trưng bày Quê Bác trên Mô hình 3D
-          </a>
-        </div>
-      </div>
-
-      <!-- Cột Phải: Tranh Panorama Nghệ thuật Làng Sen Quê Bác (Nhà tranh 5 gian, Lũy tre, Đầm sen, Nắng vàng) -->
-      <div class="homeland-art-card">
-        <svg viewBox="0 0 680 310" width="100%" height="auto" style="display: block;" role="img" aria-label="Bức tranh Làng Sen quê Bác với nhà tranh 5 gian, hàng tre xanh và đầm sen hồng">
-          <defs>
-            <linearGradient id="skySun" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#ffe27a" />
-              <stop offset="55%" stop-color="#f7b955" />
-              <stop offset="100%" stop-color="#e89548" />
-            </linearGradient>
-            <linearGradient id="pondWater" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#2c6b4f" />
-              <stop offset="100%" stop-color="#194230" />
-            </linearGradient>
-          </defs>
-
-          <!-- Bầu trời nắng vàng xứ Nghệ -->
-          <rect width="680" height="215" fill="url(#skySun)" />
-
-          <!-- Mặt trời đỏ vàng rực rỡ phía sau núi Chung -->
-          <circle cx="530" cy="82" r="46" fill="#fff099" opacity="0.85" />
-          <circle cx="530" cy="82" r="32" fill="#fffae0" />
-
-          <!-- Dãy núi Chung và đồi xa Kim Liên -->
-          <path d="M0 185 Q110 115 240 165 T490 145 T680 175 L680 215 L0 215 Z" fill="#8c583a" opacity="0.45" />
-          <path d="M0 195 Q160 140 330 180 T680 165 L680 215 L0 215 Z" fill="#4f6d3a" opacity="0.75" />
-
-          <!-- Lũy tre xanh làng quê bên trái & bên phải -->
-          <g stroke="#234d2a" stroke-width="4" fill="none">
-            <path d="M45 215 Q55 120 85 45" />
-            <path d="M62 215 Q75 130 112 60" />
-            <path d="M80 215 Q92 145 125 85" />
-            <path d="M615 215 Q600 130 570 55" />
-            <path d="M635 215 Q620 140 595 75" />
-          </g>
-          <!-- Tán lá tre xanh -->
-          <ellipse cx="90" cy="75" rx="55" ry="28" fill="#2e5e36" opacity="0.9" />
-          <ellipse cx="120" cy="105" rx="45" ry="22" fill="#3b7344" opacity="0.85" />
-          <ellipse cx="585" cy="85" rx="52" ry="26" fill="#2e5e36" opacity="0.9" />
-
-          <!-- Nền sân đất nắng vàng trước nhà -->
-          <rect x="0" y="190" width="680" height="42" fill="#d9a15b" />
-
-          <!-- NGÔI NHÀ TRANH 5 GIAN LÀNG SEN CỦA CỤ PHÓ BẢNG NGUYỄN SINH SẮC -->
-          <!-- Tường vách nứa vàng mộc mạc -->
-          <rect x="195" y="138" width="275" height="62" fill="#e6b86e" stroke="#6e3f19" stroke-width="2.5" />
-          <!-- 5 Gian cửa gỗ nhà tranh -->
-          <rect x="212" y="152" width="34" height="48" fill="#5c2c12" />
-          <rect x="262" y="152" width="38" height="48" fill="#47200b" />
-          <rect x="315" y="150" width="42" height="50" fill="#7a1111" stroke="#f0bc42" stroke-width="1.5" />
-          <rect x="372" y="152" width="38" height="48" fill="#47200b" />
-          <rect x="424" y="152" width="32" height="48" fill="#5c2c12" />
-          <!-- Cột tre/gỗ hiên nhà -->
-          <line x1="254" y1="138" x2="254" y2="200" stroke="#5c2c12" stroke-width="3.5" />
-          <line x1="307" y1="138" x2="307" y2="200" stroke="#5c2c12" stroke-width="3.5" />
-          <line x1="365" y1="138" x2="365" y2="200" stroke="#5c2c12" stroke-width="3.5" />
-          <line x1="417" y1="138" x2="417" y2="200" stroke="#5c2c12" stroke-width="3.5" />
-
-          <!-- Mái lá tranh vàng nâu dày dặn -->
-          <polygon points="170,142 332,78 495,142" fill="#8c5323" stroke="#542e0e" stroke-width="2.5" />
-          <polygon points="182,138 332,84 482,138" fill="#a8682d" />
-          <line x1="230" y1="118" x2="435" y2="118" stroke="#754218" stroke-width="2" stroke-dasharray="8 6" />
-
-          <!-- ĐẦM SEN HỒNG LÀNG SEN PHÍA TRƯỚC -->
-          <rect x="0" y="222" width="680" height="88" fill="url(#pondWater)" />
-          <!-- Lá sen xanh trên mặt hồ -->
-          <ellipse cx="110" cy="262" rx="38" ry="11" fill="#3d8252" />
-          <ellipse cx="235" cy="278" rx="45" ry="13" fill="#499660" />
-          <ellipse cx="385" cy="265" rx="42" ry="12" fill="#3d8252" />
-          <ellipse cx="525" cy="275" rx="46" ry="13" fill="#499660" />
-          <!-- Những đóa sen hồng & tâm sen vàng nở rộ -->
-          <g>
-            <path d="M110 238 L100 256 L120 256 Z" fill="#ff8da1" />
-            <path d="M102 243 L95 257 L112 257 Z" fill="#f26b83" />
-            <path d="M118 243 L108 257 L125 257 Z" fill="#f26b83" />
-            <circle cx="110" cy="254" r="4" fill="#ffdf6b" />
-          </g>
-          <g>
-            <path d="M245 250 L233 272 L257 272 Z" fill="#ff9eb0" />
-            <path d="M235 256 L226 273 L245 273 Z" fill="#f26b83" />
-            <path d="M255 256 L245 273 L264 273 Z" fill="#f26b83" />
-            <circle cx="245" cy="269" r="5" fill="#ffdf6b" />
-          </g>
-          <g>
-            <path d="M390 238 L378 260 L402 260 Z" fill="#ff8da1" />
-            <path d="M380 244 L372 261 L390 261 Z" fill="#f26b83" />
-            <path d="M400 244 L390 261 L408 261 Z" fill="#f26b83" />
-            <circle cx="390" cy="257" r="4.5" fill="#ffdf6b" />
-          </g>
-          <g>
-            <path d="M525 248 L514 268 L536 268 Z" fill="#ff9eb0" />
-            <circle cx="525" cy="265" r="4.5" fill="#ffdf6b" />
-          </g>
-
-          <!-- Nhãn chú thích nổi trên tranh -->
-          <rect x="235" y="18" width="210" height="28" rx="14" fill="#7d1111" stroke="#ffdf6b" stroke-width="1.5" />
-          <text x="340" y="36" text-anchor="middle" fill="#ffdf6b" font-size="12" font-weight="bold" font-family="sans-serif">
-            ★ DI TÍCH QUỐC GIA ĐẶC BIỆT KIM LIÊN
-          </text>
-        </svg>
-
-        <!-- 3 Nút chọn điểm di tích quê Bác -->
-        <div class="homeland-spots-bar">
-          <button class="homeland-spot-btn active" type="button" onclick="selectHomelandSpot(0, this)">
-            🏡 1. Nhà tranh 5 gian Làng Sen
-          </button>
-          <button class="homeland-spot-btn" type="button" onclick="selectHomelandSpot(1, this)">
-            🎋 2. Quê ngoại Làng Hoàng Trù
-          </button>
-          <button class="homeland-spot-btn" type="button" onclick="selectHomelandSpot(2, this)">
-            🪷 3. Đầm Sen & Núi Chung
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =====================================================================
-       PHẦN 2: MÔ HÌNH KIẾN TRÚC 3D BẢO TÀNG HỒ CHÍ MINH
-       ===================================================================== -->
-  <section id="mo-hinh-3d" class="section-block">
-    <div class="section-header">
-      <div class="section-kicker">★ Chuyên mục 2 • Không Gian Trưng Bày Trực Quan</div>
-      <h2 class="section-title">Mô Hình Bảo Tàng Hồ Chí Minh 3D (Trường THPT Mạc Đĩnh Chi)</h2>
-      <p class="section-subtitle">
-        Kéo chuột để xoay <strong>Sa bàn 3D Phòng Bảo tàng</strong> của trường hoặc bấm vào các phân khu <strong>[1] – [5]</strong> để xem hiện vật và nghe thuyết minh. Bạn cũng có thể bấm chuyển sang góc nhìn 4 vách đứng bên trong phòng.
-      </p>
-    </div>
-
-    <div class="museum-model-shell">
-      <div class="model-top-bar">
-        <div class="mode-switch-group">
-          <button id="btnModeIso" class="mode-btn active" type="button" onclick="switchMuseumViewMode('iso')">
-            🧊 Chế độ 1: Mô hình Sa bàn 3D (Xoay toàn cảnh phòng)
-          </button>
-          <button id="btnModePano" class="mode-btn" type="button" onclick="switchMuseumViewMode('pano')">
-            👁️ Chế độ 2: Đứng trong phòng (Góc nhìn 4 Vách 360°)
-          </button>
-        </div>
-        <span style="font-size: 0.78rem; color: var(--gold-bright); background: rgba(255,223,107,0.16); padding: 0.35rem 0.85rem; border-radius: 999px; border: 1px solid var(--gold-bright); font-weight: 700;">
-          ⚡ Tông Đỏ – Vàng Khánh Tiết • Không cần Server GPU
-        </span>
-      </div>
-
-      <!-- CHẾ ĐỘ 1: SA BÀN 3D -->
-      <div id="isoModelWrapper" class="model-layout-grid">
-        <div id="isoStageContainer" class="iso-stage-container" title="Giữ chuột và kéo để xoay mô hình phòng bảo tàng 3D">
-          <div id="isoRoom3D" class="iso-room-3d">
-            <div class="iso-floor">
-              <div class="iso-floor-grid"></div>
-              <div class="iso-carpet"></div>
-
-              <!-- Vách Chính Diện -->
-              <div class="iso-wall-back">
-                <div style="font-size: 0.65rem; letter-spacing: 0.14em; color: var(--gold-bright); text-transform: uppercase; font-weight: 700;">Đảng Cộng sản Việt Nam Quang vinh</div>
-                <div style="font-family: var(--font-serif); font-size: 1.08rem; color: #fff; font-weight: 700; margin: 0.25rem 0;">KHÔNG GIAN VĂN HÓA HỒ CHÍ MINH</div>
-                <div style="font-size: 0.72rem; color: var(--gold-bright); font-weight: 700;">TRƯỜNG THPT MẠC ĐĨNH CHI – PHƯỜNG PHÚ LÂM</div>
-              </div>
-
-              <!-- Vách Trái (Quê hương Làng Sen & Hành trình cứu nước) -->
-              <div class="iso-wall-left">
-                <div style="font-size: 0.72rem; color: var(--gold-bright); font-weight: 800; text-transform: uppercase;">Vách Quê Hương Làng Sen & Hành Trình Cứu Nước</div>
-                <div style="font-size: 0.68rem; color: var(--text-gold-soft); margin-top: 0.25rem;">Làng Sen Kim Liên (1890) → Bến Nhà Rồng (1911) → Tuyên ngôn Độc lập (1945)</div>
-              </div>
-
-              <!-- 5 Phân khu trên Sa bàn 3D -->
-              <div class="iso-zone-box altar" onclick="selectZone3D(0)">
-                <span class="iso-pin active" id="pinZone0">[1] Bục Khánh Tiết & Tượng Bác</span>
-              </div>
-
-              <div class="iso-zone-box journey" onclick="selectZone3D(1)">
-                <span class="iso-pin" id="pinZone1">[2] Quê Bác Làng Sen & 30 Năm</span>
-              </div>
-
-              <div class="iso-zone-box ship-model" onclick="selectZone3D(2)">
-                <span class="iso-pin" id="pinZone2">[3] Mô Hình Nhà Tranh & Tàu 1911</span>
-              </div>
-
-              <div class="iso-zone-box library-rack" onclick="selectZone3D(3)">
-                <span class="iso-pin" id="pinZone3">[4] Tủ Sách & Bác Với Giáo Dục</span>
-              </div>
-
-              <div class="iso-zone-box phulam-corner" onclick="selectZone3D(4)">
-                <span class="iso-pin" id="pinZone4">[5] Khu Hoạt Động Trường & Phường Phú Lâm</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="iso-controls-overlay">
-            <button class="btn-iso-ctrl" type="button" onclick="rotateIsoModel(-20, 0)">↺ Xoay Trái</button>
-            <button class="btn-iso-ctrl" type="button" onclick="rotateIsoModel(20, 0)">↻ Xoay Phải</button>
-            <button class="btn-iso-ctrl" type="button" onclick="rotateIsoModel(0, 10)">▲ Góc Cao</button>
-            <button class="btn-iso-ctrl" type="button" onclick="rotateIsoModel(0, -10)">▼ Góc Thấp</button>
-            <button class="btn-iso-ctrl" type="button" onclick="resetIsoModel()">⟲ Đặt lại góc chuẩn</button>
-          </div>
-        </div>
-
-        <aside id="zoneInspectorPanel" class="model-inspector-panel"></aside>
-      </div>
-
-      <!-- CHẾ ĐỘ 2: GÓC NHÌN 4 VÁCH TRONG PHÒNG -->
-      <div id="panoModelWrapper" class="panorama-view-container">
-        <div id="panoramaStage" class="panorama-stage">
-          <div class="museum-wall">
-            <div class="wall-banner">Vách 1 • Sảnh Khánh Tiết & 5 Điều Bác Hồ Dạy</div>
-            <div class="wall-exhibits-row">
-              <div class="wall-frame" onclick="selectZone3D(0); switchMuseumViewMode('iso');">
-                <div style="font-size:0.72rem; color:var(--gold-bright); font-weight:700;">VỊ TRÍ TRUNG TÂM</div>
-                <h3 style="font-family:var(--font-serif); margin:0.35rem 0;">Bục Tượng Chân Dung Bác Hồ</h3>
-                <p style="font-size:0.85rem; color:var(--text-gold-soft);">Không gian dâng hoa, sinh hoạt chính trị đầu tuần và lễ kết nạp Đoàn của học sinh THPT Mạc Đĩnh Chi.</p>
-              </div>
-              <div class="wall-frame" onclick="openBookReader('book-thu-hoc-sinh')">
-                <div style="font-size:0.72rem; color:var(--gold-bright); font-weight:700;">BẢNG TRÍCH DẪN</div>
-                <h3 style="font-family:var(--font-serif); margin:0.35rem 0;">Thư Gửi Học Sinh Khai Trường (9/1945)</h3>
-                <p style="font-size:0.85rem; color:var(--text-gold-soft);">Bấm để mở đọc toàn văn bức thư trong mục Sách Online.</p>
-              </div>
-              <div class="wall-frame" onclick="speakText('Năm điều Bác Hồ dạy: Yêu Tổ quốc, yêu đồng bào. Học tập tốt, lao động tốt. Đoàn kết tốt, kỷ luật tốt. Giữ gìn vệ sinh thật tốt. Khiêm tốn, thật thà, dũng cảm.')">
-                <div style="font-size:0.72rem; color:var(--gold-bright); font-weight:700;">THUYẾT MINH ÂM THANH</div>
-                <h3 style="font-family:var(--font-serif); margin:0.35rem 0;">5 Điều Bác Hồ Dạy</h3>
-                <p style="font-size:0.85rem; color:var(--text-gold-soft);">Bấm để nghe giọng đọc thuyết minh tự động.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="museum-wall">
-            <div class="wall-banner">Vách 2 • Quê Hương Làng Sen & Hành Trình Cứu Nước</div>
-            <div class="wall-exhibits-row">
-              <div class="wall-frame" onclick="document.getElementById('lang-que-bac').scrollIntoView({behavior:'smooth'})">
-                <div style="font-size:0.72rem; color:var(--gold-bright); font-weight:700;">CỘI NGUỒN KIM LIÊN</div>
-                <h3 style="font-family:var(--font-serif); margin:0.35rem 0;">Mô Hình Nhà Tranh Làng Sen</h3>
-                <p style="font-size:0.85rem; color:var(--text-gold-soft);">Tìm hiểu quê nội Làng Sen và quê ngoại Hoàng Trù tại Nghệ An.</p>
-              </div>
-              <div class="wall-frame" onclick="selectZone3D(2); switchMuseumViewMode('iso');">
-                <div style="font-size:0.72rem; color:var(--gold-bright); font-weight:700;">HIỆN VẬT MÔ HÌNH</div>
-                <h3 style="font-family:var(--font-serif); margin:0.35rem 0;">Tàu Amiral Latouche-Tréville</h3>
-                <p style="font-size:0.85rem; color:var(--text-gold-soft);">Con tàu rời Bến Nhà Rồng ngày 05/06/1911 mở đầu hành trình cứu nước.</p>
-              </div>
-              <div class="wall-frame" onclick="openBookReader('book-duong-kach-menh')">
-                <div style="font-size:0.72rem; color:var(--gold-bright); font-weight:700;">TÁC PHẨM LỊCH SỬ</div>
-                <h3 style="font-family:var(--font-serif); margin:0.35rem 0;">Đường Kách Mệnh (1927)</h3>
-                <p style="font-size:0.85rem; color:var(--text-gold-soft);">Bấm để mở đọc sách online lật trang.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="museum-wall">
-            <div class="wall-banner">Vách 3 • Tủ Sách Hồ Chí Minh & Sự Nghiệp Trồng Người</div>
-            <div class="wall-exhibits-row">
-              <div class="wall-frame" onclick="document.getElementById('sach-online').scrollIntoView({behavior:'smooth'})">
-                <div style="font-size:0.72rem; color:var(--gold-bright); font-weight:700;">KỆ SÁCH ONLINE</div>
-                <h3 style="font-family:var(--font-serif); margin:0.35rem 0;">Tủ Sách Điện Tử Hồ Chí Minh</h3>
-                <p style="font-size:0.85rem; color:var(--text-gold-soft);">Di chuyển xuống khu Sách Online để lật đọc từng trang.</p>
-              </div>
-              <div class="wall-frame" onclick="openBookReader('book-nhat-ky-trong-tu')">
-                <div style="font-size:0.72rem; color:var(--gold-bright); font-weight:700;">THƠ VĂN CỦA BÁC</div>
-                <h3 style="font-family:var(--font-serif); margin:0.35rem 0;">Tập Thơ Nhật Ký Trong Tù</h3>
-                <p style="font-size:0.85rem; color:var(--text-gold-soft);">Mở trình đọc sách điện tử lật trang đôi.</p>
-              </div>
-              <div class="wall-frame" onclick="openBookReader('book-di-chuc')">
-                <div style="font-size:0.72rem; color:var(--gold-bright); font-weight:700;">DI SẢN THIÊNG LIÊNG</div>
-                <h3 style="font-family:var(--font-serif); margin:0.35rem 0;">Di Chúc Chủ Tịch Hồ Chí Minh (1969)</h3>
-                <p style="font-size:0.85rem; color:var(--text-gold-soft);">Đọc và nghe thuyết minh lời căn dặn về bồi dưỡng thế hệ trẻ.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="museum-wall">
-            <div class="wall-banner">Vách 4 • Hoạt Động THPT Mạc Đĩnh Chi & Phường Phú Lâm</div>
-            <div class="wall-exhibits-row">
-              <div class="wall-frame" onclick="document.getElementById('bai-viet-cam-nhan').scrollIntoView({behavior:'smooth'})">
-                <div style="font-size:0.72rem; color:var(--gold-bright); font-weight:700;">ĐÓNG GÓP CỦA HỌC SINH</div>
-                <h3 style="font-family:var(--font-serif); margin:0.35rem 0;">Bài Viết Cảm Nhận Về Bác</h3>
-                <p style="font-size:0.85rem; color:var(--text-gold-soft);">Xem và gửi bài viết cảm nhận về Bác vào kho tư liệu trường.</p>
-              </div>
-              <div class="wall-frame" onclick="document.getElementById('trac-nghiem-bac').scrollIntoView({behavior:'smooth'})">
-                <div style="font-size:0.72rem; color:var(--gold-bright); font-weight:700;">TƯƠNG TÁC KIẾN THỨC</div>
-                <h3 style="font-family:var(--font-serif); margin:0.35rem 0;">Trắc Nghiệm Tìm Hiểu Về Bác</h3>
-                <p style="font-size:0.85rem; color:var(--text-gold-soft);">Tham gia trả lời câu hỏi và nhận giấy chứng nhận trực tuyến.</p>
-              </div>
-              <div class="wall-frame" onclick="selectZone3D(4); switchMuseumViewMode('iso');">
-                <div style="font-size:0.72rem; color:var(--gold-bright); font-weight:700;">LIÊN KẾT ĐỊA PHƯƠNG</div>
-                <h3 style="font-family:var(--font-serif); margin:0.35rem 0;">Sinh Hoạt Đoàn Phường Phú Lâm</h3>
-                <p style="font-size:0.85rem; color:var(--text-gold-soft);">Không gian giao lưu, tiết học lịch sử và gương người tốt việc tốt.</p>
-              </div>
+  <main id="main">
+    <!-- ================= TRANG CHỦ ================= -->
+    <section class="view" data-view="trang-chu">
+      <div class="hero" id="hero">
+        <div class="hero-inner">
+          <p class="hero-kicker" id="heroKicker"></p>
+          <h1 class="hero-title" id="heroTitle"></h1>
+          <p class="hero-intro" id="heroIntro"></p>
+          <div class="hero-row">
+            <figure class="hero-quote" id="heroQuote" hidden>
+              <blockquote id="heroQuoteText"></blockquote>
+              <figcaption id="heroQuoteSource"></figcaption>
+            </figure>
+            <div class="qr-card" id="heroQr" hidden>
+              <canvas aria-label="Mã QR mở trang trên điện thoại"></canvas>
+              <span>Quét mã để xem<br>trên điện thoại</span>
             </div>
           </div>
         </div>
+      </div>
+      <div class="tiles">
+        <a class="tile" href="#/mo-hinh-3d">
+          <span class="tile-num">1</span>
+          <span class="tile-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><path d="M8 24 L32 10 L56 24 Z" /><rect x="12" y="26" width="6" height="22"/><rect x="24" y="26" width="6" height="22"/><rect x="34" y="26" width="6" height="22"/><rect x="46" y="26" width="6" height="22"/><rect x="8" y="50" width="48" height="5"/></svg>
+          </span>
+          <span class="tile-title">Mô hình bảo tàng 3D</span>
+          <span class="tile-desc">Tham quan phòng trưng bày, xoay và chạm vào từng khu vực</span>
+        </a>
+        <a class="tile" href="#/sach-online">
+          <span class="tile-num">2</span>
+          <span class="tile-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><path d="M6 14 C16 10 26 12 31 16 L31 52 C26 48 16 46 6 50 Z"/><path d="M58 14 C48 10 38 12 33 16 L33 52 C38 48 48 46 58 50 Z"/></svg>
+          </span>
+          <span class="tile-title">Sách online</span>
+          <span class="tile-desc">Đọc tác phẩm, tư liệu về Bác dạng sách lật trang</span>
+        </a>
+        <a class="tile" href="#/bai-viet">
+          <span class="tile-num">3</span>
+          <span class="tile-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><rect x="10" y="8" width="36" height="48" rx="3"/><path d="M50 14 L56 20 L34 46 L26 48 L28 40 Z" /></svg>
+          </span>
+          <span class="tile-title">Bài viết cảm nhận về Bác</span>
+          <span class="tile-desc">Đọc và gửi bài viết cảm nhận về Chủ tịch Hồ Chí Minh</span>
+        </a>
+        <a class="tile" href="#/trac-nghiem">
+          <span class="tile-num">4</span>
+          <span class="tile-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="24"/><path d="M24 26 C24 18 40 18 40 26 C40 32 32 32 32 38" fill="none" stroke="#7d0f12" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="46" r="3" fill="#7d0f12"/></svg>
+          </span>
+          <span class="tile-title">Trắc nghiệm tìm hiểu về Bác</span>
+          <span class="tile-desc">Trả lời câu hỏi, nhận chứng nhận hoàn thành</span>
+        </a>
+      </div>
+    </section>
 
-        <div style="position:absolute; bottom:16px; left:24px; right:24px; display:flex; justify-content:space-between; align-items:center;">
-          <span id="panoWallIndicator" style="color:var(--gold-bright); font-weight:800; font-size:0.9rem;">Đang xem: Vách 1/4 – Sảnh Khánh Tiết</span>
-          <div style="display:flex; gap:0.5rem;">
-            <button class="btn-iso-ctrl" type="button" onclick="stepPanoWall(-1)">◀ Vách trước</button>
-            <button class="btn-iso-ctrl" type="button" onclick="stepPanoWall(1)">Vách tiếp theo ▶</button>
+    <!-- ================= TAB 1: MÔ HÌNH BẢO TÀNG 3D ================= -->
+    <section class="view" data-view="mo-hinh-3d" hidden>
+      <div class="view-head">
+        <h2>Mô hình bảo tàng 3D</h2>
+        <p>Kéo hoặc vuốt để xoay phòng trưng bày. Chạm vào số thứ tự để xem từng khu vực.</p>
+      </div>
+      <div class="museum-layout">
+        <div class="museum-stage-wrap">
+          <div class="museum-stage" id="museumStage">
+            <div class="room" id="room">
+              <div class="room-face floor"></div>
+              <div class="room-face wall wall-back" data-wall="back"></div>
+              <div class="room-face wall wall-left" data-wall="left"></div>
+              <div class="room-face wall wall-right" data-wall="right"></div>
+              <div class="room-floor-items" id="floorItems"></div>
+            </div>
+          </div>
+          <div class="museum-controls">
+            <button type="button" data-rot="-1" aria-label="Xoay trái">⟲ Xoay trái</button>
+            <button type="button" data-rot="1" aria-label="Xoay phải">Xoay phải ⟳</button>
+            <button type="button" data-zoom="1" aria-label="Phóng to">＋</button>
+            <button type="button" data-zoom="-1" aria-label="Thu nhỏ">－</button>
+            <button type="button" data-reset aria-label="Góc nhìn ban đầu">Góc nhìn ban đầu</button>
+            <button type="button" class="tour-btn" id="tourBtn">▶ Tham quan tự động</button>
           </div>
         </div>
+        <aside class="zone-panel">
+          <ol class="zone-list" id="zoneList"></ol>
+          <article class="zone-detail" id="zoneDetail"></article>
+        </aside>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- =====================================================================
-       PHẦN 3: SÁCH ONLINE (THƯ VIỆN SÁCH LẬT TRANG & AUDIO BOOK)
-       ===================================================================== -->
-  <section id="sach-online" class="library-section">
-    <div class="library-container">
-      <div class="section-header">
-        <div class="section-kicker">★ Chuyên mục 3 • Tủ Sách Hồ Chí Minh Trực Tuyến</div>
-        <h2 class="section-title">Sách Online & Tư Liệu Lật Trang Điện Tử</h2>
-        <p class="section-subtitle">
-          Thiết kế trên nền màu giấy dó truyền thống Làng Sen. Học sinh, giáo viên và nhân dân Phường Phú Lâm bấm <strong>“📖 Mở đọc sách lật trang”</strong> để đọc trực tiếp từng trang sách hoặc bấm <strong>“🔊 Nghe”</strong> để nghe giọng đọc tự động.
-        </p>
+    <!-- ================= TAB 2: SÁCH ONLINE ================= -->
+    <section class="view" data-view="sach-online" hidden>
+      <div class="view-head">
+        <h2>Sách online</h2>
+        <p>Tác phẩm của Chủ tịch Hồ Chí Minh và tư liệu viết về Người. Chạm vào cuốn sách để đọc.</p>
       </div>
+      <div class="chip-row" id="bookFilters"></div>
+      <div class="bookshelf" id="bookshelf"></div>
+    </section>
 
-      <div class="library-filter-row">
-        <button class="lib-tab-btn active" data-lib-filter="all" type="button">Tất cả Sách Online (06)</button>
-        <button class="lib-tab-btn" data-lib-filter="tac-pham" type="button">Tác phẩm của Bác</button>
-        <button class="lib-tab-btn" data-lib-filter="giao-duc" type="button">Bác Hồ với Học sinh & Giáo dục</button>
-        <button class="lib-tab-btn" data-lib-filter="dao-duc" type="button">Chuyện kể Đạo đức Bác Hồ & Miền Nam</button>
+    <!-- ================= TAB 3: BÀI VIẾT CẢM NHẬN ================= -->
+    <section class="view" data-view="bai-viet" hidden>
+      <div class="view-head">
+        <h2>Bài viết cảm nhận về Bác</h2>
+        <p>Bài viết của thầy cô, học sinh và nhân dân đã được Ban biên tập duyệt đăng.</p>
       </div>
-
-      <div id="bookshelfGrid" class="bookshelf-grid"></div>
-    </div>
-  </section>
-
-  <!-- =====================================================================
-       PHẦN 4: BÀI VIẾT CẢM NHẬN VỀ BÁC (KHO BÀI VIẾT & ĐÓNG GÓP HỌC SINH)
-       ===================================================================== -->
-  <section id="bai-viet-cam-nhan" class="section-block">
-    <div class="section-header">
-      <div class="section-kicker">★ Chuyên mục 4 • Góc Tâm Tình & Đóng Góp Tư Liệu</div>
-      <h2 class="section-title">Bài Viết Cảm Nhận Về Bác & Cổng Đóng Góp Của Học Sinh</h2>
-      <p class="section-subtitle">
-        Nơi lưu giữ những bài viết cảm nhận sâu sắc về quê hương Làng Sen, đạo đức, phong cách của Bác và những câu chuyện học tập làm theo lời Bác của thầy trò <strong>Trường THPT Mạc Đĩnh Chi</strong> cùng đoàn viên <strong>Phường Phú Lâm</strong>.
-      </p>
-    </div>
-
-    <div class="workflow-steps-banner">
-      <div class="wf-step">
-        <strong>1. Học sinh gửi Bài cảm nhận</strong>
-        Điền Họ tên, Lớp, Chủ đề và nội dung cảm nhận về Bác vào khung bên phải. Bài gửi sẽ vào danh sách <em>“Chờ GV duyệt”</em>.
+      <div class="articles-layout">
+        <div class="article-grid" id="articleGrid"></div>
+        <aside class="submit-card" id="submitCard">
+          <h3>Gửi bài cảm nhận</h3>
+          <p class="muted">Bài viết sẽ được Ban biên tập xem xét trước khi đăng.</p>
+          <form id="submitForm" autocomplete="off">
+            <label>Họ và tên <input name="name" required maxlength="80"></label>
+            <label>Lớp / Đơn vị <input name="className" maxlength="80" placeholder="Ví dụ: 11A3 hoặc Khu phố 5"></label>
+            <label>Tiêu đề bài viết <input name="title" required maxlength="160"></label>
+            <label>Nội dung <textarea name="content" required rows="8" maxlength="8000"></textarea></label>
+            <label class="check"><input type="checkbox" name="consent" required> Tôi đồng ý để nhà trường đăng bài kèm họ tên và lớp/đơn vị.</label>
+            <input name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button type="submit" class="btn-primary">Gửi bài</button>
+            <p class="form-msg" id="submitMsg" role="status"></p>
+          </form>
+        </aside>
       </div>
-      <div class="wf-step">
-        <strong>2. Giáo viên / Ban Truyền Thông duyệt</strong>
-        Giáo viên kiểm tra nội dung và bấm nút <em>“✔ Phê duyệt đăng lên Kho”</em> chỉ với 1 chạm để đảm bảo chuẩn mực.
+    </section>
+
+    <!-- ================= TAB 4: TRẮC NGHIỆM ================= -->
+    <section class="view" data-view="trac-nghiem" hidden>
+      <div class="view-head">
+        <h2>Trắc nghiệm tìm hiểu về Bác</h2>
+        <p>Chọn đáp án đúng cho mỗi câu hỏi. Hoàn thành để nhận chứng nhận.</p>
       </div>
-      <div class="wf-step">
-        <strong>3. Lan tỏa & Nghe đọc tự động</strong>
-        Bài viết được vinh danh trên trang kèm tên học sinh, chi đoàn lớp và tích hợp sẵn giọng đọc truyền cảm.
-      </div>
-    </div>
+      <div class="quiz-card" id="quizCard"></div>
+    </section>
+  </main>
 
-    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem;">
-      <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-        <button class="mode-btn active" data-art-filter="approved" type="button" onclick="filterStudentArticles('approved', this)">
-          ✅ Bài cảm nhận đã duyệt (<span id="countApproved">0</span>)
-        </button>
-        <button class="mode-btn" data-art-filter="pending" type="button" onclick="filterStudentArticles('pending', this)">
-          ⏳ Bài mới chờ duyệt (<span id="countPending">0</span>)
-        </button>
-        <button class="mode-btn" data-art-filter="all" type="button" onclick="filterStudentArticles('all', this)">
-          📚 Xem tất cả
-        </button>
-      </div>
-
-      <div>
-        <button id="btnToggleModMode" class="btn-secondary" type="button" onclick="toggleTeacherModerationMode()" style="padding: 0.5rem 1rem; font-size: 0.82rem;">
-          🔐 Quyền Giáo viên duyệt bài: <strong id="modStatusLabel" style="color: var(--gold-bright);">ĐANG BẬT (Demo)</strong>
-        </button>
-      </div>
-    </div>
-
-    <div class="student-repo-grid">
-      <div>
-        <div id="studentArticlesGrid" class="articles-list-grid"></div>
-      </div>
-
-      <div class="contribution-box">
-        <span style="font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold-bright); font-weight: 800;">
-          ✍️ Gửi Bài Cảm Nhận Về Bác
-        </span>
-        <h3 style="font-family: var(--font-serif); font-size: 1.38rem; margin: 0.3rem 0 0.75rem; color: #fff;">
-          Đóng Góp Bài Viết Vào Kho Tư Liệu
-        </h3>
-        <p style="font-size: 0.84rem; color: var(--text-gold-soft); margin-bottom: 1rem;">
-          Mời thầy cô, các em học sinh THPT Mạc Đĩnh Chi và đoàn viên Phường Phú Lâm gửi bài viết cảm nhận về Bác:
-        </p>
-
-        <form id="studentContributionForm">
-          <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 0.65rem;">
-            <input id="stuName" class="input-field" type="text" placeholder="Họ và tên tác giả *" required />
-            <input id="stuClass" class="input-field" type="text" placeholder="Lớp / Đơn vị (VD: 11A2) *" required />
-          </div>
-
-          <select id="stuTopic" class="input-field" required style="background-color: #4a0606;">
-            <option value="Cảm nhận về Bác & Quê hương Làng Sen">🪷 Chủ đề: Cảm nhận về Bác & Quê hương Làng Sen</option>
-            <option value="Kể chuyện Tấm gương Đạo đức Bác Hồ">🌟 Chủ đề: Kể chuyện Tấm gương Đạo đức Bác Hồ</option>
-            <option value="Cảm nhận Sách & Tác phẩm của Bác">📖 Chủ đề: Cảm nhận Sách & Tác phẩm của Bác</option>
-            <option value="Tuổi trẻ Mạc Đĩnh Chi làm theo lời Bác">🏅 Chủ đề: Tuổi trẻ Mạc Đĩnh Chi làm theo lời Bác</option>
-          </select>
-
-          <input id="stuTitle" class="input-field" type="text" placeholder="Tiêu đề bài viết cảm nhận *" required />
-
-          <textarea id="stuContent" class="input-field" rows="4" placeholder="Chia sẻ câu chuyện hoặc cảm nhận sâu sắc của bạn về Chủ tịch Hồ Chí Minh... *" required></textarea>
-
-          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
-            📤 Gửi Bài Viết Cảm Nhận
-          </button>
-        </form>
-
-        <div id="submitNoticeBox" style="display:none; margin-top: 0.9rem; padding: 0.8rem; border-radius: 6px; background: rgba(34,197,94,0.25); border: 1px solid #4ade80; font-size: 0.84rem; color: #fff;"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =====================================================================
-       PHẦN 5: TRẮC NGHIỆM TÌM HIỂU VỀ BÁC & SỔ VÀNG LƯU NIỆM
-       ===================================================================== -->
-  <section id="trac-nghiem-bac" class="section-block" style="padding-top: 1rem;">
-    <div class="section-header">
-      <div class="section-kicker">★ Chuyên mục 5 • Kiểm Tra Kiến Thức & Lưu Niệm</div>
-      <h2 class="section-title">Trắc Nghiệm Tìm Hiểu Về Bác & Sổ Vàng Lưu Niệm</h2>
-      <p class="section-subtitle">
-        Hoàn thành 5 câu hỏi trắc nghiệm tìm hiểu về quê hương Làng Sen, cuộc đời và sự nghiệp của Bác để nhận <strong>Giấy Chứng Nhận Tham Quan Trực Tuyến</strong> mang sắc Đỏ – Vàng của Trường THPT Mạc Đĩnh Chi & Phường Phú Lâm.
-      </p>
-    </div>
-
-    <div class="dual-interactive-grid">
-      <div class="interactive-panel">
-        <span style="font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold-bright); font-weight: 800;">
-          🎯 Trắc Nghiệm Tương Tác (05 Câu Hỏi)
-        </span>
-        <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 0.3rem 0 1.1rem; color: #fff;">
-          Tìm Hiểu Cuộc Đời, Quê Hương & Tư Tưởng Của Bác
-        </h3>
-        <div id="quizContainer"></div>
-      </div>
-
-      <div class="interactive-panel">
-        <span style="font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold-bright); font-weight: 800;">
-          ✍️ Sổ Vàng Lưu Niệm
-        </span>
-        <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 0.3rem 0 1rem; color: #fff;">
-          Ghi Dấu Ấn Tham Quan Bảo Tàng
-        </h3>
-        <form id="guestbookForm" style="margin-bottom: 1rem;">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem;">
-            <input id="guestName" class="input-field" type="text" placeholder="Họ và tên *" required />
-            <input id="guestRole" class="input-field" type="text" placeholder="Đơn vị (Lớp / Phường Phú Lâm)" />
-          </div>
-          <textarea id="guestMessage" class="input-field" rows="2" placeholder="Lời hứa hoặc cảm nghĩ ngắn gọn... *" required></textarea>
-          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 0.75rem;">
-            Ghi vào Sổ Vàng Lưu Niệm
-          </button>
-        </form>
-        <div id="guestbookEntries" class="guestbook-entries"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MODAL 1: TRÌNH ĐỌC SÁCH ONLINE LẬT TRANG ĐÔI -->
-  <div id="bookReaderModal" class="modal-backdrop" onclick="if(event.target === this) closeBookReader()">
-    <div class="book-reader-modal">
-      <div class="reader-header">
-        <div>
-          <span id="readerBookTag" style="font-size: 0.72rem; color: var(--gold-bright); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;">TỦ SÁCH HỒ CHÍ MINH</span>
-          <h3 id="readerBookTitle" style="font-family: var(--font-serif); font-size: 1.35rem; color: #fff;">Tên cuốn sách</h3>
-        </div>
-        <div style="display: flex; gap: 0.5rem; align-items: center;">
-          <button id="btnListenCurrentPage" class="btn-audio-guide" type="button">🔊 Nghe đọc trang này</button>
-          <button class="modal-close" type="button" onclick="closeBookReader()" style="position: static;">✕</button>
-        </div>
-      </div>
-
-      <div class="reader-pages-spread">
-        <div class="reader-page left-page">
-          <div>
-            <div id="leftPageHeader" style="font-size: 0.75rem; color: #8c1919; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; border-bottom: 1px solid #e2d3b3; padding-bottom: 0.4rem;"></div>
-            <div id="leftPageContent" style="font-family: var(--font-serif); font-size: 1.04rem; line-height: 1.75; color: #261710;"></div>
-          </div>
-          <div id="leftPageNum" style="font-size: 0.78rem; color: #8c6d46; font-weight: 700; margin-top: 1.5rem;">Trang 1</div>
-        </div>
-
-        <div class="reader-page right-page">
-          <div>
-            <div id="rightPageHeader" style="font-size: 0.75rem; color: #8c1919; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; border-bottom: 1px solid #e2d3b3; padding-bottom: 0.4rem;"></div>
-            <div id="rightPageContent" style="font-family: var(--font-serif); font-size: 1.04rem; line-height: 1.75; color: #261710;"></div>
-          </div>
-          <div id="rightPageNum" style="font-size: 0.78rem; color: #8c6d46; font-weight: 700; text-align: right; margin-top: 1.5rem;">Trang 2</div>
-        </div>
-      </div>
-
-      <div class="reader-footer">
-        <button id="btnPrevSpread" class="btn-listen-book" type="button" onclick="turnBookSpread(-1)">◀ Lật trang trước</button>
-        <span id="readerSpreadStatus" style="font-size: 0.85rem; font-weight: 800; color: var(--red-imperial);">Trang 1–2 / 4</span>
-        <button id="btnNextSpread" class="btn-read-book" type="button" onclick="turnBookSpread(1)" style="flex: 0 0 auto;">Lật trang tiếp theo ▶</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- MODAL 2: ĐỌC TOÀN VĂN BÀI VIẾT CẢM NHẬN -->
-  <div id="articleDetailModal" class="modal-backdrop" onclick="if(event.target === this) closeArticleModal()">
-    <div class="modal-content">
-      <button class="modal-close" type="button" onclick="closeArticleModal()">✕</button>
-      <div id="articleModalBody"></div>
-    </div>
-  </div>
-
-  <!-- CHÂN TRANG ĐỎ - VÀNG -->
   <footer class="site-footer">
-    <p style="color: var(--gold-bright); font-family: var(--font-serif); font-size: 1.15rem; font-weight: 700; margin-bottom: 0.4rem;">
-      KHÔNG GIAN VĂN HÓA HỒ CHÍ MINH TRỰC TUYẾN – TRƯỜNG THPT MẠC ĐĨNH CHI & PHƯỜNG PHÚ LÂM
-    </p>
-    <p>Sắc Đỏ Son – Vàng Kim & Hương Sen Làng Quê Bác • Mô hình 3D • Sách Online • Bài viết Cảm nhận • Trắc nghiệm</p>
+    <p id="footerText"></p>
   </footer>
 
-  <script src="app.js"></script>
+  <!-- Hộp thoại dùng chung (đọc sách, đọc bài viết, chi tiết) -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head">
+        <h3 id="modalTitle"></h3>
+        <button type="button" class="modal-close" id="modalClose" aria-label="Đóng">✕ Đóng</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Màn hình chờ cho màn hình cảm ứng (chế độ kiosk): mô hình 3D tự tham quan phía sau -->
+  <div class="attract" id="attract" hidden>
+    <div class="attract-inner">
+      <div class="attract-text">
+        <p class="attract-unit" id="attractUnit"></p>
+        <h2 id="attractTitle"></h2>
+        <p class="attract-touch">Chạm vào màn hình để bắt đầu tham quan</p>
+      </div>
+      <div class="qr-card qr-big" id="attractQr">
+        <canvas aria-label="Mã QR mở trang trên điện thoại"></canvas>
+        <span>Quét mã để xem trên điện thoại</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Màn mở đầu: sao vàng, cánh sen rơi trên nền Làng Sen -->
+  <div class="intro" id="intro" hidden>
+    <div class="intro-petals" id="introPetals" aria-hidden="true"></div>
+    <div class="intro-inner">
+      <svg class="intro-star" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="48" fill="#b3121a" stroke="#f3c64c" stroke-width="3"/><polygon points="50,18 58.8,40.6 83,41.6 64,56.7 70.6,80 50,66.8 29.4,80 36,56.7 17,41.6 41.2,40.6" fill="#ffd84d"/></svg>
+      <p class="intro-unit" id="introUnit"></p>
+      <h1 class="intro-title" id="introTitle"></h1>
+    </div>
+    <button type="button" class="intro-skip" id="introSkip">Bỏ qua ›</button>
+  </div>
+
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/qr.js"></script>
+  <script src="assets/js/site.js"></script>
 </body>
 </html>

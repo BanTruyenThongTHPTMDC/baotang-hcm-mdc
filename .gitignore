@@ -1,0 +1,10 @@
+# Dữ liệu riêng trên máy chủ trường – KHÔNG đưa lên GitHub
+api/private/*
+!api/private/.htaccess
+# Tệp tải lên trên máy chủ trường
+uploads/*
+!uploads/.htaccess
+!uploads/.gitkeep
+# Tệp tạm khi ghi dữ liệu
+data/*.tmp-*
+.DS_Store

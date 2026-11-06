@@ -1,216 +1,79 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bàn Xây Dựng Bảo Tàng Số (No-Code Studio) | Không Gian Văn Hóa Hồ Chí Minh</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Quản trị – Không gian văn hóa Hồ Chí Minh</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@500;700&family=Noto+Serif:ital,wght@0,600;0,700;1,400&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    body.studio-standalone {
-      height: 100dvh;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      background: #100504;
-    }
-
-    .studio-topbar {
-      height: 62px;
-      background: linear-gradient(90deg, #54090d 0%, #2b0908 55%, #180605 100%);
-      border-bottom: 1.5px solid var(--gold-primary);
-      padding: 0 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-shrink: 0;
-    }
-
-    .studio-brand {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .studio-brand-badge {
-      background: var(--gold-bright);
-      color: var(--bg-obsidian);
-      font-weight: 800;
-      font-size: 0.72rem;
-      padding: 0.22rem 0.55rem;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .studio-workspace {
-      flex: 1;
-      display: grid;
-      grid-template-columns: 540px 1fr;
-      overflow: hidden;
-    }
-
-    .studio-editor-col {
-      background: #160705;
-      border-right: 2px solid var(--gold-primary);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
-
-    .studio-preview-col {
-      background: #0b0302;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
-
-    .preview-toolbar {
-      padding: 0.6rem 1.2rem;
-      background: #140605;
-      border-bottom: 1px solid var(--gold-border-subtle);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.78rem;
-      color: var(--text-light-muted);
-    }
-
-    .preview-frame-wrap {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.75rem;
-      overflow: hidden;
-    }
-
-    #livePreviewIframe {
-      width: 100%;
-      height: 100%;
-      border: 1.5px solid var(--gold-muted);
-      border-radius: 10px;
-      background: var(--bg-obsidian);
-      transition: width 0.3s ease;
-    }
-
-    #livePreviewIframe.mobile-view {
-      width: 412px;
-      max-width: 100%;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85);
-    }
-
-    @media (max-width: 1100px) {
-      .studio-workspace {
-        grid-template-columns: 1fr;
-      }
-
-      .studio-preview-col {
-        display: none;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/admin.css">
 </head>
-
-<body class="studio-standalone">
-
-  <!-- THANH CÔNG CỤ STUDIO TRÊN CÙNG -->
-  <header class="studio-topbar">
-    <div class="studio-brand">
-      <span class="studio-brand-badge">NO-CODE MUSEUM BUILDER</span>
-      <h1 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--gold-light);">
-        Bàn Xây Dựng & Quản Trị Không Gian Văn Hóa Hồ Chí Minh
-      </h1>
-    </div>
-
-    <div style="display: flex; align-items: center; gap: 0.65rem;">
-      <button type="button" class="cms-btn-sm" onclick="exportMuseumJson()">
-        💾 Xuất File Dự Án (.json)
-      </button>
-      <button type="button" class="cms-btn-sm" onclick="resetToDefaultMuseum()" title="Khôi phục về bản gốc">
-        🔄 Khôi phục Mặc định
-      </button>
-      <a href="index.html" class="btn-primary" style="padding: 0.48rem 1.1rem; font-size: 0.82rem;">
-        🏛️ Mở Trang Bảo Tàng Chính Thức ↗
-      </a>
-    </div>
-  </header>
-
-  <!-- KHÔNG GIAN LÀM VIỆC 2 CỘT: TRÌNH DỰNG NO-CODE (TRÁI) & XEM TRƯỚC TRỰC TIẾP (PHẢI) -->
-  <main class="studio-workspace">
-    <!-- Cột Trái: Công cụ Chỉnh sửa Không cần Code -->
-    <section class="studio-editor-col">
-      <div class="cms-tabs-nav" id="cmsTabsNav">
-        <button type="button" class="cms-tab-btn active" data-tab="general">1. Đảng Bộ & Sảnh</button>
-        <button type="button" class="cms-tab-btn" data-tab="walls">2. Phòng 360° (4 Vách)</button>
-        <button type="button" class="cms-tab-btn" data-tab="timeline">3. Biên Niên Sử</button>
-        <button type="button" class="cms-tab-btn" data-tab="artifacts">4. Hiện Vật & Ảnh</button>
-        <button type="button" class="cms-tab-btn" data-tab="interactive">5. Câu Hỏi & Sổ Vàng</button>
-        <button type="button" class="cms-tab-btn" data-tab="publish">6. Xuất Bản</button>
+<body>
+  <!-- ĐĂNG NHẬP (chỉ dùng khi chạy trên máy chủ trường) -->
+  <section class="login" id="loginScreen" hidden>
+    <form class="login-card" id="loginForm">
+      <div class="login-emblem">★</div>
+      <h1>Quản trị<br>Không gian văn hóa Hồ Chí Minh</h1>
+      <div id="loginNormal">
+        <label>Mật khẩu quản trị
+          <input type="password" id="loginPassword" autocomplete="current-password" required>
+        </label>
+        <button type="submit" class="btn btn-primary btn-big">Đăng nhập</button>
       </div>
-
-      <div id="cmsStudioBody" class="cms-body"></div>
-
-      <div class="cms-footer">
-        <span style="font-size: 0.76rem; color: var(--gold-light);">
-          ⚡ Tự động đồng bộ sang màn hình Xem trước bên phải
-        </span>
-        <button type="button" class="btn-primary" style="padding: 0.5rem 1.1rem; font-size: 0.82rem;"
-          onclick="saveMuseumState(true)">
-          ✔ Lưu Thay Đổi & Cập Nhật Preview
-        </button>
+      <div id="loginSetup" hidden>
+        <p class="hint">Lần đầu sử dụng: nhập <strong>mã cài đặt</strong> do bộ phận kỹ thuật cung cấp, sau đó đặt mật khẩu quản trị.</p>
+        <label>Mã cài đặt <input id="setupCode" autocomplete="off"></label>
+        <label>Mật khẩu mới (tối thiểu 8 ký tự) <input type="password" id="setupPass1" autocomplete="new-password"></label>
+        <label>Nhập lại mật khẩu mới <input type="password" id="setupPass2" autocomplete="new-password"></label>
+        <button type="submit" class="btn btn-primary btn-big">Đặt mật khẩu và vào trang quản trị</button>
       </div>
-    </section>
+      <p class="form-error" id="loginError" role="alert"></p>
+      <a href="index.html" class="back-link">← Về trang Không gian văn hóa</a>
+    </form>
+  </section>
 
-    <!-- Cột Phải: Màn hình Xem trước Thời gian thực -->
-    <section class="studio-preview-col">
-      <div class="preview-toolbar">
+  <!-- KHUNG QUẢN TRỊ -->
+  <div class="app" id="app" hidden>
+    <header class="topbar">
+      <div class="topbar-title">
+        <span class="emblem">★</span>
         <div>
-          🟢 <strong>Màn hình Xem trước Trực tiếp (Live Preview)</strong> – Bạn có thể tương tác, xoay 360° ngay bên
-          dưới
-        </div>
-        <div style="display: flex; gap: 0.5rem;">
-          <button type="button" class="cms-btn-sm" onclick="setPreviewMode('desktop')">💻 Máy tính</button>
-          <button type="button" class="cms-btn-sm" onclick="setPreviewMode('mobile')">📱 Điện thoại</button>
-          <button type="button" class="cms-btn-sm" onclick="refreshPreviewIframe()">🔄 Làm mới</button>
+          <strong>Trang quản trị</strong>
+          <span>Không gian văn hóa Hồ Chí Minh</span>
         </div>
       </div>
-      <div class="preview-frame-wrap">
-        <iframe id="livePreviewIframe" src="index.html" title="Xem trước Bảo tàng Số"></iframe>
+      <div class="topbar-actions">
+        <span class="save-state" id="saveState">Đã lưu</span>
+        <a class="btn btn-light" id="btnPreview" href="index.html" target="_blank" rel="noopener">👁 Xem trang</a>
+        <button type="button" class="btn btn-gold btn-save" id="btnSave">💾 Lưu thay đổi</button>
+        <button type="button" class="btn btn-light" id="btnLogout" hidden>Đăng xuất</button>
       </div>
-    </section>
-  </main>
+    </header>
+    <div class="mode-banner" id="modeBanner" hidden></div>
 
-  <!-- MODAL XEM TRƯỚC MÃ QR KỆ TRƯNG BÀY TRONG ADMIN -->
-  <div id="artifactModal" class="modal-backdrop" onclick="if(event.target === this) closeArtifactModal()">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeArtifactModal()" title="Đóng">✕</button>
-      <div id="modalBodyContent"></div>
+    <div class="layout">
+      <nav class="sidebar" id="sidebar" aria-label="Mục quản trị"></nav>
+      <main class="content" id="content" tabindex="-1"></main>
     </div>
   </div>
 
-  <div id="cmsToast" class="cms-toast">✔ Đã lưu và đồng bộ Bảo tàng Số!</div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="app.js"></script>
-  <script>
-    function setPreviewMode(mode) {
-      const frame = document.getElementById('livePreviewIframe');
-      if (!frame) return;
-      frame.classList.toggle('mobile-view', mode === 'mobile');
-    }
-    function refreshPreviewIframe() {
-      const frame = document.getElementById('livePreviewIframe');
-      if (frame && frame.contentWindow) {
-        frame.contentWindow.location.reload();
-      }
-    }
-  </script>
+  <!-- Hộp xác nhận lớn, dễ đọc -->
+  <div class="dialog" id="dialog" hidden>
+    <div class="dialog-box" role="alertdialog" aria-modal="true" aria-labelledby="dialogText">
+      <p id="dialogText"></p>
+      <div class="dialog-actions">
+        <button type="button" class="btn btn-light btn-big" id="dialogNo">Không</button>
+        <button type="button" class="btn btn-primary btn-big" id="dialogYes">Đồng ý</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/qr.js"></script>
+  <script src="assets/js/admin.js"></script>
 </body>
-
 </html>

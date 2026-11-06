@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 600" preserveAspectRatio="xMidYMax slice">
+  <!-- Phong cảnh Làng Sen (Kim Liên, Nam Đàn, Nghệ An) – minh họa cách điệu -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbe7b0"/>
+      <stop offset="0.55" stop-color="#f6d48a"/>
+      <stop offset="1" stop-color="#eebd6a"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9fbf8f"/>
+      <stop offset="1" stop-color="#5f8a5c"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fff6d6"/>
+      <stop offset="0.6" stop-color="#ffe08a"/>
+      <stop offset="1" stop-color="#ffe08a" stop-opacity="0"/>
+    </radialGradient>
+    <g id="bamboo">
+      <path d="M0 0 C 2 -60, -3 -120, 4 -190" stroke="#3c6b3f" stroke-width="5" fill="none"/>
+      <path d="M14 0 C 18 -70, 12 -140, 22 -215" stroke="#335e37" stroke-width="5" fill="none"/>
+      <path d="M-14 0 C -16 -55, -10 -110, -20 -170" stroke="#447545" stroke-width="4" fill="none"/>
+      <ellipse cx="4" cy="-195" rx="48" ry="26" fill="#3f7041"/>
+      <ellipse cx="26" cy="-215" rx="40" ry="22" fill="#4b8150"/>
+      <ellipse cx="-22" cy="-170" rx="40" ry="24" fill="#3a683d"/>
+      <ellipse cx="-4" cy="-150" rx="36" ry="18" fill="#477b4a"/>
+      <ellipse cx="30" cy="-160" rx="30" ry="16" fill="#3f7041"/>
+    </g>
+    <g id="lotus">
+      <path d="M0 0 C -14 -10, -14 -30, 0 -42 C 14 -30, 14 -10, 0 0 Z" fill="#f2a1b2"/>
+      <path d="M0 0 C -26 -4, -32 -22, -24 -32 C -10 -26, -4 -12, 0 0 Z" fill="#e87a90"/>
+      <path d="M0 0 C 26 -4, 32 -22, 24 -32 C 10 -26, 4 -12, 0 0 Z" fill="#e87a90"/>
+      <path d="M0 0 L0 40" stroke="#3c6b3f" stroke-width="3"/>
+    </g>
+    <g id="leaf">
+      <ellipse cx="0" cy="0" rx="34" ry="11" fill="#3f7a46"/>
+      <path d="M0 0 L30 -4" stroke="#2f5f35" stroke-width="2"/>
+    </g>
+  </defs>
+
+  <rect width="1600" height="600" fill="url(#sky)"/>
+  <circle cx="1180" cy="170" r="120" fill="url(#sun)"/>
+
+  <!-- Núi Chung và dãy núi xa -->
+  <path d="M0 360 C 160 300, 260 320, 380 290 C 480 265, 560 300, 660 310 C 780 320, 900 280, 1020 300 C 1160 322, 1300 270, 1440 300 C 1520 315, 1570 320, 1600 318 L1600 420 L0 420 Z" fill="#c9a26a" opacity="0.55"/>
+  <path d="M120 400 C 220 330, 330 300, 430 330 C 520 355, 600 380, 700 400 Z" fill="#9c8a55" opacity="0.6"/>
+
+  <!-- Đồng lúa -->
+  <rect x="0" y="395" width="1600" height="60" fill="#c8b45a"/>
+  <path d="M0 410 C 300 400, 600 420, 900 405 C 1200 392, 1400 415, 1600 405 L1600 455 L0 455 Z" fill="#b5a24c"/>
+
+  <!-- Lũy tre trái -->
+  <g transform="translate(60 440)"><use href="#bamboo"/></g>
+  <g transform="translate(150 445) scale(1.15)"><use href="#bamboo"/></g>
+  <g transform="translate(245 440) scale(0.9)"><use href="#bamboo"/></g>
+
+  <!-- Mái nhà tranh 5 gian -->
+  <g transform="translate(470 330)">
+    <rect x="10" y="62" width="300" height="62" fill="#a7744a"/>
+    <rect x="10" y="62" width="300" height="62" fill="none" stroke="#6d4528" stroke-width="3"/>
+    <g fill="#6d4528">
+      <rect x="40" y="75" width="34" height="49"/>
+      <rect x="100" y="75" width="34" height="49"/>
+      <rect x="160" y="75" width="34" height="49"/>
+      <rect x="220" y="75" width="34" height="49"/>
+    </g>
+    <path d="M-30 66 L50 0 L270 0 L350 66 Z" fill="#d7b26a"/>
+    <path d="M-30 66 L50 0 L270 0 L350 66 Z" fill="none" stroke="#a5813f" stroke-width="3"/>
+    <path d="M0 50 L330 50 M20 34 L310 34 M40 18 L290 18" stroke="#b9934e" stroke-width="2"/>
+  </g>
+  <g transform="translate(860 445) scale(1.05)"><use href="#bamboo"/></g>
+
+  <!-- Lũy tre phải -->
+  <g transform="translate(1370 445) scale(1.2)"><use href="#bamboo"/></g>
+  <g transform="translate(1470 440)"><use href="#bamboo"/></g>
+  <g transform="translate(1555 448) scale(1.1)"><use href="#bamboo"/></g>
+
+  <!-- Đầm sen -->
+  <path d="M0 455 C 300 445, 700 465, 1000 452 C 1250 442, 1450 462, 1600 452 L1600 600 L0 600 Z" fill="url(#water)"/>
+  <g>
+    <g transform="translate(120 520)"><use href="#leaf"/></g>
+    <g transform="translate(260 560) scale(1.3)"><use href="#leaf"/></g>
+    <g transform="translate(420 505)"><use href="#leaf"/></g>
+    <g transform="translate(640 550) scale(1.2)"><use href="#leaf"/></g>
+    <g transform="translate(900 515)"><use href="#leaf"/></g>
+    <g transform="translate(1100 565) scale(1.4)"><use href="#leaf"/></g>
+    <g transform="translate(1280 520)"><use href="#leaf"/></g>
+    <g transform="translate(1480 555) scale(1.2)"><use href="#leaf"/></g>
+    <g transform="translate(190 500)"><use href="#lotus"/></g>
+    <g transform="translate(350 540) scale(1.2)"><use href="#lotus"/></g>
+    <g transform="translate(720 520)"><use href="#lotus"/></g>
+    <g transform="translate(1000 545) scale(1.25)"><use href="#lotus"/></g>
+    <g transform="translate(1210 505) scale(0.9)"><use href="#lotus"/></g>
+    <g transform="translate(1390 540) scale(1.15)"><use href="#lotus"/></g>
+  </g>
+</svg>
