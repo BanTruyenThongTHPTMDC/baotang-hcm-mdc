@@ -1,8 +1,49 @@
 // ============================================================================
 // HỆ SINH THÁI BẢO TÀNG HỒ CHÍ MINH TRỰC TUYẾN
 // TRƯỜNG THPT MẠC ĐĨNH CHI & PHƯỜNG PHÚ LÂM
-// 3 Trụ cột: (1) Mô hình 3D Bảo tàng • (2) Thư viện Sách Điện tử • (3) Kho Bài viết Học sinh
+// 1. Đỏ - Vàng chủ đạo & Làng quê của Bác (Làng Sen - Kim Liên)
+// 2. Mô hình Bảo tàng 3D
+// 3. Sách Online Lật Trang
+// 4. Bài viết cảm nhận về Bác (Đóng góp & Kiểm duyệt)
+// 5. Trắc nghiệm tìm hiểu về Bác (05 câu hỏi & Chứng nhận Đỏ - Vàng)
 // ============================================================================
+
+// DỮ LIỆU 3 ĐIỂM DI TÍCH LÀNG QUÊ CỦA BÁC (KIM LIÊN, NAM ĐÀN, NGHỆ AN)
+const HOMELAND_SPOTS_DATA = [
+  {
+    title: '🏡 Nhà tranh 5 gian Làng Sen (Quê nội Bác Hồ)',
+    text: 'Ngôi nhà tranh 5 gian mộc mạc tại Làng Sen (xã Kim Liên, huyện Nam Đàn, tỉnh Nghệ An) được nhân dân trong làng dựng tặng cụ Nguyễn Sinh Sắc khi cụ đỗ Phó bảng năm 1901. Dưới mái nhà đơn sơ rợp bóng tre xanh và hương sen thơm ngát, người thiếu niên Nguyễn Sinh Cung (Nguyễn Tất Thành) đã sống những năm tháng tuổi thơ (1901–1906), lắng nghe các bậc sĩ phu yêu nước đàm đạo thời cuộc và nuôi dưỡng chí lớn cứu nước.',
+    audio: 'Nhà tranh 5 gian tại Làng Sen, xã Kim Liên, huyện Nam Đàn, tỉnh Nghệ An là quê nội của Chủ tịch Hồ Chí Minh. Ngôi nhà mộc mạc dưới bóng tre xanh và hương sen thơm ngát là nơi gắn bó với tuổi thơ của Người từ năm 1901 đến năm 1906.'
+  },
+  {
+    title: '🎋 Làng Hoàng Trù – Chùaượng (Quê ngoại Bác Hồ)',
+    text: 'Cách Làng Sen khoảng 2km là cụm di tích Làng Hoàng Trù – quê ngoại của Bác, nơi cậu bé Nguyễn Sinh Cung cất tiếng khóc chào đời vào ngày 19/05/1890. Tại đây còn lưu giữ chiếc võng gai, khung cửi dệt vải của bà Hoàng Thị Loan – người mẹ tần tảo đã nuôi dưỡng tâm hồn nhân ái của Bác bằng những câu dân ca ví, giặm xứ Nghệ.',
+    audio: 'Làng Hoàng Trù là quê ngoại yêu dấu, nơi Chủ tịch Hồ Chí Minh cất tiếng khóc chào đời ngày 19 tháng 5 năm 1890 trong tình yêu thương và tiếng hát ru ví giặm của người mẹ Hoàng Thị Loan.'
+  },
+  {
+    title: '🪷 Đầm Sen Kim Liên & Núi Chung Quê Hương',
+    text: 'Làng Kim Liên xưa có tên nôm là Làng Sen bởi khắp làng đều ngát hương sen hồng mỗi độ hạ về. Hình ảnh đóa sen vươn lên thanh khiết giữa bùn lầy cùng ngọn Núi Chung lịch sử nơi Bác thường cùng bạn bè thuở nhỏ chăn trâu, tập trận giả đã trở thành biểu tượng cao đẹp cho nhân cách và tâm hồn Chủ tịch Hồ Chí Minh.',
+    audio: 'Đầm sen Kim Liên và ngọn Núi Chung quê hương đã in đậm dấu chân tuổi thơ của Bác. Đóa sen hồng vươn lên thuần khiết dưới nắng vàng xứ Nghệ cũng chính là biểu tượng cho cốt cách thanh cao của Chủ tịch Hồ Chí Minh.'
+  }
+];
+
+let currentHomelandSpotIdx = 0;
+
+window.selectHomelandSpot = function(idx, btnEl) {
+  currentHomelandSpotIdx = idx;
+  const spot = HOMELAND_SPOTS_DATA[idx];
+  const textEl = document.getElementById('homelandDetailText');
+  if (textEl && spot) {
+    textEl.innerHTML = `<strong style="color: var(--red-imperial); display: block; margin-bottom: 0.3rem;">${spot.title}:</strong> ${spot.text}`;
+  }
+  document.querySelectorAll('.homeland-spot-btn').forEach(b => b.classList.remove('active'));
+  if (btnEl) btnEl.classList.add('active');
+};
+
+window.speakHomelandCurrent = function() {
+  const spot = HOMELAND_SPOTS_DATA[currentHomelandSpotIdx];
+  if (spot) window.speakText(spot.audio);
+};
 
 // 1. DỮ LIỆU 5 PHÂN KHU TRONG MÔ HÌNH KIẾN TRÚC 3D PHÒNG BẢO TÀNG
 const MUSEUM_ZONES_3D = [
@@ -11,7 +52,7 @@ const MUSEUM_ZONES_3D = [
     code: 'KHU VỰC [1] • VÁCH CHÍNH DIỆN',
     title: 'Bục Khánh Tiết & Tượng Chân Dung Chủ Tịch Hồ Chí Minh',
     position: 'Trung tâm Vách Bắc (Chính diện khi bước vào phòng bảo tàng trường)',
-    description: 'Không gian trang nghiêm nhất của phòng bảo tàng với tượng bán thân Chủ tịch Hồ Chí Minh trên bục gỗ sơn son thếp vàng, phía sau là cờ Đảng – cờ Tổ quốc, bảng 5 Điều Bác Hồ dạy và trích dẫn lời căn dặn đối với thế hệ trẻ.',
+    description: 'Không gian trang nghiêm nhất của phòng bảo tàng với sắc Đỏ Son – Vàng Kim chủ đạo: tượng bán thân Chủ tịch Hồ Chí Minh trên bục gỗ thếp vàng, phía sau là cờ Đảng – cờ Tổ quốc, bảng 5 Điều Bác Hồ dạy và trích dẫn lời căn dặn đối với thế hệ trẻ.',
     exhibits: [
       'Tượng chân dung Chủ tịch Hồ Chí Minh & Thảm đỏ dâng hoa',
       'Bảng vàng 5 Điều Bác Hồ dạy thiếu niên, nhi đồng',
@@ -23,29 +64,29 @@ const MUSEUM_ZONES_3D = [
   {
     id: 1,
     code: 'KHU VỰC [2] • VÁCH TÂY (BÊN TRÁI)',
-    title: 'Vách Biên Niên Sử & Hành Trình 30 Năm Tìm Đường Cứu Nước',
+    title: 'Vách Quê Hương Làng Sen & Hành Trình 30 Năm Tìm Đường Cứu Nước',
     position: 'Dọc toàn bộ mảng tường bên trái phòng bảo tàng',
-    description: 'Trưng bày hệ thống tranh tư liệu, bản đồ phát sáng và biên niên sử từ quê hương Kim Liên (Nghệ An), mái trường Dục Thanh (Phan Thiết), Bến Nhà Rồng (05/06/1911) qua 4 châu lục đến ngày trở về Pác Bó (1941) và đọc Tuyên ngôn Độc lập (02/09/1945).',
+    description: 'Trưng bày hệ thống tranh tư liệu về Làng Sen quê nội, Làng Hoàng Trù quê ngoại (Kim Liên, Nam Đàn, Nghệ An), mái trường Dục Thanh (Phan Thiết), Bến Nhà Rồng (05/06/1911) qua 4 châu lục đến ngày trở về Pác Bó (1941) và đọc Tuyên ngôn Độc lập (02/09/1945).',
     exhibits: [
-      'Hình ảnh Làng Sen quê nội và Làng Hoàng Trù quê ngoại',
+      'Không gian văn hóa Làng Sen quê nội & Làng Hoàng Trù quê ngoại',
       'Bản đồ hành trình 30 năm bôn ba qua gần 30 quốc gia',
       'Tư liệu Hội nghị thành lập Đảng (1930) và Quảng trường Ba Đình (02/09/1945)'
     ],
-    audioScript: 'Khu vực 2: Vách biên niên sử bên trái phòng bảo tàng, tái hiện cuộc đời và hành trình 30 năm tìm đường cứu nước của người thanh niên Nguyễn Tất Thành từ Bến Nhà Rồng đến ngày đọc bản Tuyên ngôn Độc lập.',
+    audioScript: 'Khu vực 2: Vách trưng bày bên trái phòng bảo tàng, tái hiện cội nguồn Làng Sen Kim Liên Nghệ An và hành trình 30 năm tìm đường cứu nước của người thanh niên Nguyễn Tất Thành.',
     linkedBookId: 'book-duong-kach-menh'
   },
   {
     id: 2,
     code: 'KHU VỰC [3] • TỦ KÍNH TRUNG TÂM',
-    title: 'Tủ Trưng Bày Mô Hình Tàu Latouche-Tréville & Hiện Vật Phục Chế',
+    title: 'Tủ Mô Hình Nhà Tranh Làng Sen, Tàu Latouche-Tréville & Đôi Dép Cao Su',
     position: 'Cụm tủ kính đặt giữa phòng bảo tàng (có lối đi xung quanh)',
-    description: 'Trưng bày các mô hình và hiện vật phục chế trực quan giúp học sinh quan sát từ 4 phía: Mô hình con tàu Đô đốc Latouche-Tréville, đôi dép cao su giản dị, chiếc áo kaki sờn vai và chiếc gậy tre của Bác.',
+    description: 'Trưng bày các mô hình trực quan giúp học sinh quan sát từ 4 phía: Mô hình ngôi nhà tranh 5 gian Làng Sen, mô hình con tàu Đô đốc Latouche-Tréville (1911), đôi dép cao su giản dị và chiếc áo kaki của Bác.',
     exhibits: [
-      'Mô hình tàu buôn Pháp Amiral Latouche-Tréville (tỷ lệ thu nhỏ)',
-      'Đôi dép cao su & Mũ cối chiến dịch Việt Bắc',
-      'Mã QR dán tại tủ kính kết nối thẳng tới giọng đọc thuyết minh trên điện thoại'
+      'Mô hình Nhà tranh 5 gian Làng Sen (Kim Liên, Nghệ An)',
+      'Mô hình tàu buôn Pháp Amiral Latouche-Tréville (Bến Nhà Rồng 1911)',
+      'Đôi dép cao su & Mũ cối chiến dịch Việt Bắc'
     ],
-    audioScript: 'Khu vực 3: Tủ kính trưng bày hiện vật trung tâm. Nổi bật là mô hình con tàu Đô đốc Latouche-Tréville nơi Bác rời Bến Nhà Rồng năm 1911 cùng đôi dép cao su biểu tượng cho lối sống giản dị, cần kiệm liêm chính.',
+    audioScript: 'Khu vực 3: Tủ kính trưng bày hiện vật trung tâm gồm mô hình ngôi nhà tranh Làng Sen quê Bác, mô hình tàu Đô đốc Latouche-Tréville và đôi dép cao su biểu tượng cho lối sống giản dị của Người.',
     linkedBookId: 'book-doi-dep-bac'
   },
   {
@@ -53,13 +94,13 @@ const MUSEUM_ZONES_3D = [
     code: 'KHU VỰC [4] • VÁCH ĐÔNG (BÊN PHẢI)',
     title: 'Kệ Tủ Sách Hồ Chí Minh & Chuyên Đề Bác Hồ Với Giáo Dục',
     position: 'Mảng tường và hệ thống kệ gỗ bên phải phòng bảo tàng',
-    description: 'Khu vực trưng bày các đầu sách quý viết về Bác, các tác phẩm văn thơ của Người và những bức thư Bác gửi ngành Giáo dục, thầy cô giáo và học sinh. Kết nối đồng bộ với phân khu Thư viện Số trực tuyến bên dưới.',
+    description: 'Khu vực trưng bày các đầu sách quý viết về Bác, các tác phẩm văn thơ của Người và những bức thư Bác gửi ngành Giáo dục, thầy cô giáo và học sinh. Kết nối đồng bộ với phân khu Sách Online bên dưới.',
     exhibits: [
       'Tủ sách truyền thống trưng bày hơn 50 đầu sách về Chủ tịch Hồ Chí Minh',
       'Bản sao Thư gửi học sinh nhân ngày khai trường đầu tiên (9/1945)',
       'Chuyên đề: “Miền Nam luôn trong trái tim tôi” & Cây vú sữa miền Nam'
     ],
-    audioScript: 'Khu vực 4: Kệ Tủ sách Hồ Chí Minh và chuyên đề Bác Hồ với sự nghiệp giáo dục. Mọi đầu sách trên kệ đều đã được số hóa thành sách lật trang điện tử ngay tại mục Thư viện của website này.',
+    audioScript: 'Khu vực 4: Kệ Tủ sách Hồ Chí Minh và chuyên đề Bác Hồ với sự nghiệp giáo dục. Mọi đầu sách trên kệ đều đã được số hóa thành sách lật trang điện tử ngay tại mục Sách Online của website này.',
     linkedBookId: 'book-nhat-ky-trong-tu'
   },
   {
@@ -67,18 +108,18 @@ const MUSEUM_ZONES_3D = [
     code: 'KHU VỰC [5] • KHU TƯƠNG TÁC PHÍA TRƯỚC',
     title: 'Không Gian Hoạt Động THPT Mạc Đĩnh Chi & Phường Phú Lâm',
     position: 'Khu vực bàn tương tác & bảng vinh danh gần cửa ra vào phòng bảo tàng',
-    description: 'Nơi trưng bày hình ảnh các tiết học lịch sử tại bảo tàng, hoạt động ngoại khóa của học sinh THPT Mạc Đĩnh Chi, sinh hoạt chuyên đề của Đoàn Phường Phú Lâm và màn hình tra cứu Kho bài viết học sinh đóng góp.',
+    description: 'Nơi trưng bày hình ảnh các tiết học lịch sử tại bảo tàng, hoạt động ngoại khóa của học sinh THPT Mạc Đĩnh Chi, sinh hoạt chuyên đề của Đoàn Phường Phú Lâm và màn hình tra cứu Kho bài viết cảm nhận về Bác.',
     exhibits: [
       'Bảng ảnh hoạt động học tập và làm theo lời Bác của thầy trò THPT Mạc Đĩnh Chi',
       'Góc kết nối Đoàn viên – Thanh niên và nhân dân Phường Phú Lâm',
-      'Bàn Sổ vàng lưu niệm và mã QR để học sinh gửi bài viết đóng góp vào Kho'
+      'Bàn Sổ vàng lưu niệm và mã QR để học sinh gửi bài cảm nhận về Bác'
     ],
-    audioScript: 'Khu vực 5: Không gian kết nối giữa Trường Trung học phổ thông Mạc Đĩnh Chi và Phường Phú Lâm, nơi vinh danh các gương điển hình và lưu giữ các bài viết cảm nhận do chính học sinh nhà trường đóng góp.',
+    audioScript: 'Khu vực 5: Không gian kết nối giữa Trường Trung học phổ thông Mạc Đĩnh Chi và Phường Phú Lâm, nơi vinh danh các gương điển hình và lưu giữ các bài viết cảm nhận về Bác do học sinh đóng góp.',
     linkedBookId: 'book-di-chuc'
   }
 ];
 
-// 2. DỮ LIỆU THƯ VIỆN SỐ & SÁCH ĐIỆN TỬ LẬT TRANG (E-BOOK FLIPBOOK)
+// 2. DỮ LIỆU THƯ VIỆN SÁCH ONLINE LẬT TRANG (E-BOOK FLIPBOOK)
 const LIBRARY_BOOKS = [
   {
     id: 'book-thu-hoc-sinh',
@@ -244,83 +285,106 @@ const LIBRARY_BOOKS = [
   }
 ];
 
-// 3. DỮ LIỆU KHO BÀI VIẾT HỌC SINH ĐÓNG GÓP & HÀNG CHỜ KIỂM DUYỆT
+// 3. DỮ LIỆU KHO BÀI VIẾT CẢM NHẬN VỀ BÁC & HÀNG CHỜ KIỂM DUYỆT
 const INITIAL_STUDENT_ARTICLES = [
   {
     id: 'stu-art-1',
     name: 'Nguyễn Minh Khuê',
     className: 'Lớp 12A1 – THPT Mạc Đĩnh Chi',
-    topic: 'Cảm nhận Tác phẩm của Bác',
-    title: 'Bài học tự học và ý chí vượt khó từ hành trình bôn ba của người thanh niên Nguyễn Tất Thành',
-    date: '02/11/2026',
+    topic: 'Cảm nhận về Bác & Quê hương Làng Sen',
+    title: 'Từ mái nhà tranh Làng Sen đến ý chí tự học phi thường của người thanh niên Nguyễn Tất Thành',
+    date: '05/11/2026',
     status: 'approved',
-    content: 'Khi bước vào phòng Bảo tàng Hồ Chí Minh của Trường THPT Mạc Đĩnh Chi và dừng chân trước mô hình con tàu Đô đốc Latouche-Tréville, em luôn tự hỏi: Điều gì đã giúp một người thanh niên 21 tuổi với hai bàn tay trắng vượt qua gần 30 quốc gia và tự học thông thạo nhiều ngoại ngữ như tiếng Pháp, tiếng Anh, tiếng Nga, tiếng Trung?\n\nĐọc tư liệu tại thư viện trường, em hiểu rằng mỗi tối sau hơn 10 giờ lao động vất vả trên tàu hay trong căn phòng trọ nhỏ ở Paris, Bác đều viết từ mới lên cánh tay để vừa làm việc vừa nhẩm học, rồi tập viết từng bài báo ngắn cho tờ Người Cùng Khổ (Le Paria). Đối với học sinh lớp 12 chúng em đang đứng trước ngưỡng cửa kỳ thi tốt nghiệp THPT, tấm gương tự học bền bỉ của Bác chính là nguồn động lực lớn nhất để không bao giờ bỏ cuộc trước bài toán khó.'
+    content: 'Mỗi khi ngắm nhìn mô hình ngôi nhà tranh 5 gian Làng Sen (Kim Liên, Nam Đàn, Nghệ An) và con tàu Đô đốc Latouche-Tréville tại phòng Bảo tàng Hồ Chí Minh của Trường THPT Mạc Đĩnh Chi, lòng em lại trào dâng niềm xúc động sâu sắc.\n\nSinh ra từ một làng quê nghèo đầy nắng gió xứ Nghệ nhưng giàu truyền thống hiếu học và nghĩa tình, Bác đã mang theo cốt cách thanh cao của đóa sen quê nhà đi khắp năm châu bốn biển. Mỗi tối sau hơn 10 giờ lao động vất vả, Bác đều tự học ngoại ngữ bằng cách viết từ mới lên cánh tay và đọc sách tại thư viện. Đối với học sinh lớp 12 chúng em, tấm gương của Bác chính là ngọn lửa tiếp thêm nghị lực để vượt qua mọi thử thách.'
   },
   {
     id: 'stu-art-2',
     name: 'Trần Gia Huy',
     className: 'Lớp 11A4 – THPT Mạc Đĩnh Chi',
-    topic: 'Kể chuyện Đạo đức Hồ Chí Minh',
-    title: 'Từ câu chuyện đôi dép cao su của Bác đến lối sống xanh, tiết kiệm của học sinh Mạc Đĩnh Chi',
-    date: '01/11/2026',
+    topic: 'Kể chuyện Tấm gương Đạo đức Bác Hồ',
+    title: 'Cảm nhận về đôi dép cao su của Bác và lối sống giản dị, tiết kiệm của tuổi trẻ hôm nay',
+    date: '03/11/2026',
     status: 'approved',
-    content: 'Trong buổi sinh hoạt dưới cờ tuần qua, chi đoàn 11A4 chúng em đã cùng nhau tìm hiểu câu chuyện về đôi dép cao su của Bác Hồ. Dù là Chủ tịch nước, Bác vẫn giữ thói quen tiết kiệm từng trang giấy, viết thư trên mặt sau của những tờ bản tin đã đọc xong và đi đôi dép cao su suốt hơn 20 năm.\n\nTừ câu chuyện ấy, lớp em đã phát động phong trào “Góc học tập xanh – Tiết kiệm theo gương Bác”: tắt quạt và đèn ngay khi rời phòng học, quyên góp sách giáo khoa cũ và dụng cụ học tập gửi tặng các em nhỏ có hoàn cảnh khó khăn trên địa bàn Phường Phú Lâm. Học theo Bác không phải là những điều xa vời mà bắt đầu từ những hành động nhỏ bé mỗi ngày.'
+    content: 'Trong buổi sinh hoạt chuyên đề tại phòng bảo tàng trường, chi đoàn 11A4 chúng em đã cùng nhau lắng nghe câu chuyện về đôi dép cao su của Bác Hồ. Dù ở cương vị Chủ tịch nước, Bác vẫn giữ thói quen tiết kiệm từng trang giấy, từng giọt nước và đi đôi dép cao su suốt hơn 20 năm.\n\nTừ câu chuyện ấy, lớp em đã phát động phong trào “Góc học tập xanh – Tiết kiệm theo gương Bác”: tắt quạt và đèn ngay khi rời lớp, quyên góp sách giáo khoa cũ gửi tặng các em nhỏ có hoàn cảnh khó khăn trên địa bàn Phường Phú Lâm.'
   },
   {
     id: 'stu-art-3',
     name: 'Lê Hoàng Thảo Vy',
     className: 'Đoàn viên Phường Phú Lâm & Cựu HS Mạc Đĩnh Chi',
-    topic: 'Tìm hiểu Di tích & Phường Phú Lâm',
+    topic: 'Tuổi trẻ Mạc Đĩnh Chi làm theo lời Bác',
     title: 'Tự hào Không gian Văn hóa Hồ Chí Minh gắn kết giữa mái trường Mạc Đĩnh Chi và Phường Phú Lâm',
-    date: '30/10/2026',
+    date: '01/11/2026',
     status: 'approved',
-    content: 'Là một cựu học sinh Trường THPT Mạc Đĩnh Chi và hiện đang tham gia công tác Đoàn tại Phường Phú Lâm, mình vô cùng xúc động khi thấy phòng Bảo tàng Hồ Chí Minh của trường nay đã có phiên bản trực tuyến. Nhờ đó, không chỉ các em học sinh trong trường mà cả bà con nhân dân, các cô chú cựu chiến binh và đoàn viên thanh niên trong phường đều có thể truy cập đọc sách của Bác và nghe thuyết minh ngay trên điện thoại.'
+    content: 'Là một cựu học sinh Trường THPT Mạc Đĩnh Chi và hiện đang tham gia công tác Đoàn tại Phường Phú Lâm, mình vô cùng tự hào khi thấy phòng Bảo tàng Hồ Chí Minh của trường nay đã có phiên bản trực tuyến rực rỡ sắc Đỏ – Vàng. Nhờ đó, không chỉ các em học sinh trong trường mà cả bà con nhân dân, các cô chú cựu chiến binh và đoàn viên thanh niên trong phường đều có thể truy cập đọc sách của Bác và gửi bài cảm nhận ngay trên điện thoại.'
   },
   {
     id: 'stu-art-4',
     name: 'Phạm Quốc Bảo',
     className: 'Lớp 10A8 – THPT Mạc Đĩnh Chi',
-    topic: 'Gương sáng Học tập & Làm theo lời Bác',
-    title: 'Cảm nghĩ của học sinh khối 10 trong lần đầu tham quan Phòng Bảo tàng Hồ Chí Minh của trường',
+    topic: 'Cảm nhận Sách & Tác phẩm của Bác',
+    title: 'Cảm nghĩ của học sinh khối 10 khi đọc Bức thư Bác gửi học sinh nhân ngày khai trường 9/1945',
     date: 'Hôm nay (Chờ GV duyệt)',
     status: 'pending',
-    content: 'Hôm nay là tiết học Lịch sử trải nghiệm đầu tiên của tập thể lớp 10A8 tại Phòng Bảo tàng Hồ Chí Minh của Trường THPT Mạc Đĩnh Chi. Em ấn tượng nhất với bức thư Bác gửi học sinh nhân ngày khai trường tháng 9/1945 được treo trang trọng ở vách chính diện. Em xin gửi bài cảm nhận này vào kho tư liệu của trường với lời hứa sẽ rèn luyện thật tốt trong 3 năm học dưới mái trường Mạc Đĩnh Chi!'
+    content: 'Hôm nay trong tiết học trải nghiệm tại Phòng Bảo tàng Hồ Chí Minh của Trường THPT Mạc Đĩnh Chi, em đã đọc toàn văn bức thư Bác gửi học sinh nhân ngày khai trường đầu tiên của nước Việt Nam độc lập (tháng 9/1945). Câu nói về việc đưa dân tộc bước tới đài vinh quang sánh vai cùng các cường quốc năm châu khiến em vô cùng tự hào và tự hứa sẽ cố gắng học tập thật tốt dưới mái trường Mạc Đĩnh Chi!'
   }
 ];
 
+// 4. BỘ 05 CÂU HỎI TRẮC NGHIỆM TÌM HIỂU VỀ BÁC HỒ
 const QUIZ_QUESTIONS = [
   {
-    question: 'Câu 1: Ngày 05/06/1911, người thanh niên Nguyễn Tất Thành rời Bến cảng Nhà Rồng ra đi tìm đường cứu nước trên con tàu mang tên gì?',
+    question: 'Câu 1: Quê nội (Làng Sen) và quê ngoại (Làng Hoàng Trù) gắn liền với tuổi thơ của Chủ tịch Hồ Chí Minh thuộc xã, huyện, tỉnh nào?',
     options: [
-      'A. Tàu Amiral Latouche-Tréville',
-      'B. Tàu Pháp quốc (France)',
+      'A. Xã Kim Liên, huyện Nam Đàn, tỉnh Nghệ An',
+      'B. Xã Đức Tân, huyện Mộ Đức, tỉnh Quảng Ngãi',
+      'C. Xã Trường Xuân, huyện Quảng Ninh, tỉnh Quảng Bình',
+      'D. Xã Sơn Kim, huyện Hương Sơn, tỉnh Hà Tĩnh'
+    ],
+    correctIndex: 0,
+    explanation: 'Chính xác! Quê hương của Bác tại Làng Sen và Làng Hoàng Trù thuộc xã Kim Liên, huyện Nam Đàn, tỉnh Nghệ An.'
+  },
+  {
+    question: 'Câu 2: Ngày 05/06/1911, từ Bến cảng Nhà Rồng (Sài Gòn), người thanh niên Nguyễn Tất Thành ra đi tìm đường cứu nước trên con tàu buôn Pháp mang tên gì?',
+    options: [
+      'A. Tàu Pháp quốc (France)',
+      'B. Tàu Amiral Latouche-Tréville',
       'C. Tàu Bình Minh',
       'D. Tàu Đông Dương'
     ],
-    correctIndex: 0,
-    explanation: 'Chính xác! Người lấy tên là Văn Ba và làm phụ bếp trên tàu buôn Pháp Đô đốc Latouche-Tréville.'
+    correctIndex: 1,
+    explanation: 'Chính xác! Người lấy tên là Văn Ba và làm phụ bếp trên tàu Đô đốc Latouche-Tréville.'
   },
   {
-    question: 'Câu 2: Trong tác phẩm “Đường Kách Mệnh” (1927), nội dung nào được Nguyễn Ái Quốc đặt ở ngay trang đầu tiên?',
+    question: 'Câu 3: Trong tác phẩm “Đường Kách Mệnh” (xuất bản năm 1927), nội dung nào được Nguyễn Ái Quốc đặt ngay ở trang đầu tiên?',
     options: [
       'A. Lịch sử các cuộc cách mạng thế giới',
       'B. Tư cách một người Kách mệnh (23 điều rèn luyện đạo đức)',
-      'C. Phương pháp tổ chức hội quần chúng',
+      'C. Phương pháp tổ chức công hội',
       'D. Nghệ thuật quân sự'
     ],
     correctIndex: 1,
-    explanation: 'Chính xác! Bác đặt “Tư cách một người kách mệnh” lên đầu tiên vì đạo đức là gốc của người cách mạng.'
+    explanation: 'Chính xác! Bác đặt “Tư cách một người kách mệnh” lên trang đầu tiên vì đạo đức là cái gốc của người cách mạng.'
   },
   {
-    question: 'Câu 3: Để bài viết của học sinh đóng góp được hiển thị công khai trên Kho Bảo Tàng Số của Trường THPT Mạc Đĩnh Chi, bài viết sẽ đi qua quy trình nào?',
+    question: 'Câu 4: Câu nói nổi tiếng “Non sông Việt Nam có trở nên tươi đẹp hay không... chính là nhờ một phần lớn ở công học tập của các em” nằm trong bức thư nào của Bác?',
     options: [
-      'A. Chỉ nộp bản giấy viết tay cuối năm',
-      'B. Học sinh gửi qua Biểu mẫu trực tuyến → Lưu vào Hàng chờ kiểm duyệt → Giáo viên / Ban Truyền Thông phê duyệt công khai',
-      'C. Không cho phép học sinh gửi bài',
-      'D. Phải cài phần mềm riêng trên máy tính'
+      'A. Thư gửi các em học sinh nhân ngày khai trường đầu tiên của nước Việt Nam Dân chủ Cộng hòa (9/1945)',
+      'B. Lời kêu gọi Toàn quốc kháng chiến (12/1946)',
+      'C. Thư gửi Hội nghị Cán bộ Giáo dục (1951)',
+      'D. Bản Tuyên ngôn Độc lập (02/09/1945)'
+    ],
+    correctIndex: 0,
+    explanation: 'Hoàn toàn chính xác! Đây là lời căn dặn bất hủ của Bác gửi học sinh cả nước vào tháng 9/1945.'
+  },
+  {
+    question: 'Câu 5: Năm 1954, đồng bào miền Nam (tỉnh Cà Mau) đã gửi tặng Bác Hồ loài cây kỷ vật nào được Bác trồng và chăm sóc hàng ngày bên ngôi nhà sàn?',
+    options: [
+      'A. Cây đa Tân Trào',
+      'B. Cây vú sữa miền Nam',
+      'C. Cây bàng Côn Đảo',
+      'D. Cây mai vàng phương Nam'
     ],
     correctIndex: 1,
-    explanation: 'Hoàn toàn chính xác! Quy trình 3 bước giúp khuyến khích học sinh đóng góp sôi nổi mà vẫn đảm bảo kiểm duyệt nội dung chuẩn xác.'
+    explanation: 'Rất xuất sắc! Cây vú sữa miền Nam bên nhà sàn Bác Hồ là biểu tượng xúc động cho tình cảm “Miền Nam luôn trong trái tim tôi”.'
   }
 ];
 
@@ -329,13 +393,13 @@ const INITIAL_GUESTBOOK = [
     name: 'Cô Nguyễn Thị Minh Châu',
     role: 'Giáo viên Lịch sử – THPT Mạc Đĩnh Chi',
     date: 'Hôm nay',
-    message: 'Mô hình 3D kèm Thư viện sách lật trang và Kho bài viết giúp học sinh chủ động đọc tư liệu và nộp bài thu hoạch trực tiếp cực kỳ tiện lợi!'
+    message: 'Giao diện sắc Đỏ – Vàng kết hợp bức tranh Làng Sen quê Bác rất ấm áp, trang trọng. Các em học sinh rất thích phần đọc Sách Online và gửi bài viết cảm nhận!'
   },
   {
     name: 'Trần Hoàng Nam',
     role: 'Bí thư Chi đoàn khu phố – Phường Phú Lâm',
     date: 'Hôm qua',
-    message: 'Giao diện trang trọng, phần sách điện tử lật trang rất dễ đọc trên điện thoại cho đoàn viên và người dân Phường Phú Lâm.'
+    message: 'Tự hào công trình Không gian Văn hóa Hồ Chí Minh trực tuyến của Trường THPT Mạc Đĩnh Chi và Phường Phú Lâm!'
   }
 ];
 
@@ -349,10 +413,10 @@ let selectedZoneIdx = 0;
 let panoWallIdx = 0;
 
 let activeBook = null;
-let activeBookSpreadIndex = 0; // Mỗi spread hiển thị 2 trang (0 -> trang 0,1; 1 -> trang 2,3)
+let activeBookSpreadIndex = 0;
 
 let currentArticleFilter = 'approved';
-let teacherModerationMode = true; // Mặc định bật trong bản Demo để BGH/Phường bấm thử duyệt bài ngay
+let teacherModerationMode = true;
 
 let isAudioPlaying = false;
 let currentQuizIdx = 0;
@@ -374,7 +438,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ============================================================================
-// TRỤ CỘT 1: MÔ HÌNH KIẾN TRÚC 3D BẢO TÀNG HCM & GÓC NHÌN 360°
+// CHUYÊN MỤC 2: MÔ HÌNH KIẾN TRÚC 3D BẢO TÀNG HCM & GÓC NHÌN 360°
 // ============================================================================
 function init3DMuseumModel() {
   const stage = document.getElementById('isoStageContainer');
@@ -407,7 +471,6 @@ function init3DMuseumModel() {
     dragging = false;
   });
 
-  // Hỗ trợ vuốt cảm ứng trên điện thoại / máy tính bảng
   stage.addEventListener('touchstart', (e) => {
     if (e.touches.length === 1) {
       prevX = e.touches[0].clientX;
@@ -454,7 +517,6 @@ window.selectZone3D = function(idx) {
   const zone = MUSEUM_ZONES_3D[idx];
   const panel = document.getElementById('zoneInspectorPanel');
 
-  // Cập nhật trạng thái nút Pin trên sa bàn 3D
   for (let i = 0; i < 5; i++) {
     const pin = document.getElementById(`pinZone${i}`);
     if (pin) pin.classList.toggle('active', i === idx);
@@ -464,24 +526,24 @@ window.selectZone3D = function(idx) {
 
   panel.innerHTML = `
     <div>
-      <span style="display:inline-block; font-size:0.72rem; font-weight:700; color:var(--gold-bright); background:rgba(212,168,83,0.16); border:1px solid var(--gold-primary); padding:0.22rem 0.65rem; border-radius:4px; margin-bottom:0.65rem;">
+      <span style="display:inline-block; font-size:0.72rem; font-weight:800; color:var(--red-deep); background:var(--gold-bright); padding:0.24rem 0.7rem; border-radius:4px; margin-bottom:0.65rem;">
         ${zone.code}
       </span>
-      <h3 style="font-family:var(--font-serif); font-size:1.35rem; color:var(--text-light); margin-bottom:0.45rem;">
+      <h3 style="font-family:var(--font-serif); font-size:1.35rem; color:#ffffff; margin-bottom:0.45rem;">
         ${zone.title}
       </h3>
-      <p style="font-size:0.8rem; color:var(--gold-primary); margin-bottom:0.85rem;">
+      <p style="font-size:0.8rem; color:var(--gold-bright); font-weight:700; margin-bottom:0.85rem;">
         📍 Vị trí trong phòng thật: ${zone.position}
       </p>
-      <p style="font-size:0.88rem; color:var(--text-light-muted); margin-bottom:1rem; line-height:1.6;">
+      <p style="font-size:0.88rem; color:var(--text-gold-soft); margin-bottom:1rem; line-height:1.6;">
         ${zone.description}
       </p>
 
-      <div style="background:rgba(255,255,255,0.04); border:1px solid var(--gold-muted); border-radius:8px; padding:0.9rem; margin-bottom:1.1rem;">
+      <div style="background:rgba(40,4,4,0.6); border:1.5px solid var(--gold-border); border-radius:8px; padding:0.9rem; margin-bottom:1.1rem;">
         <strong style="font-size:0.78rem; text-transform:uppercase; color:var(--gold-bright); display:block; margin-bottom:0.45rem;">
-          Danh mục trưng bày tại phân khu này:
+          Hiện vật & Tư liệu tại phân khu này:
         </strong>
-        <ul style="padding-left:1.1rem; font-size:0.84rem; color:var(--text-light); display:flex; flex-direction:column; gap:0.35rem;">
+        <ul style="padding-left:1.1rem; font-size:0.84rem; color:#ffffff; display:flex; flex-direction:column; gap:0.35rem;">
           ${zone.exhibits.map(ex => `<li>${ex}</li>`).join('')}
         </ul>
       </div>
@@ -492,7 +554,7 @@ window.selectZone3D = function(idx) {
         🔊 Nghe thuyết minh Phân khu [${idx + 1}]
       </button>
       <button class="btn-secondary" type="button" onclick="openBookReader('${zone.linkedBookId}')" style="justify-content:center; width:100%;">
-        📖 Đọc Tác phẩm liên quan trong Thư viện
+        📖 Đọc Sách Online liên quan
       </button>
     </div>
   `;
@@ -526,7 +588,7 @@ window.stepPanoWall = function(step) {
   }
   const titles = [
     'Đang xem: Vách 1/4 – Sảnh Khánh Tiết & Tượng Bác',
-    'Đang xem: Vách 2/4 – Hành Trình 30 Năm Tìm Đường Cứu Nước',
+    'Đang xem: Vách 2/4 – Quê Hương Làng Sen & Hành Trình Cứu Nước',
     'Đang xem: Vách 3/4 – Tủ Sách Hồ Chí Minh & Sự Nghiệp Trồng Người',
     'Đang xem: Vách 4/4 – Hoạt Động THPT Mạc Đĩnh Chi & Phường Phú Lâm'
   ];
@@ -534,7 +596,7 @@ window.stepPanoWall = function(step) {
 };
 
 // ============================================================================
-// TRỤ CỘT 2: THƯ VIỆN SỐ & TRÌNH ĐỌC SÁCH LẬT TRANG ĐÔI (E-BOOK READER)
+// CHUYÊN MỤC 3: THƯ VIỆN SÁCH ONLINE LẬT TRANG ĐÔI (E-BOOK READER)
 // ============================================================================
 function initLibraryFilterTabs() {
   const buttons = document.querySelectorAll('.lib-tab-btn');
@@ -560,13 +622,13 @@ function renderLibraryBooks(filter) {
     <article class="book-card">
       <div class="book-cover-visual">
         <div class="book-3d-spine">
-          <div style="font-size:0.6rem; color:var(--gold-bright); letter-spacing:0.08em; text-transform:uppercase;">
-            TỦ SÁCH HCM
+          <div style="font-size:0.6rem; color:var(--gold-bright); letter-spacing:0.08em; text-transform:uppercase; font-weight:800;">
+            SÁCH ONLINE
           </div>
           <div style="font-family:var(--font-serif); font-size:0.82rem; font-weight:700; line-height:1.25; color:#fff;">
             ${book.title.length > 42 ? book.title.slice(0, 42) + '...' : book.title}
           </div>
-          <div style="font-size:0.62rem; color:var(--gold-primary);">
+          <div style="font-size:0.62rem; color:var(--gold-bright); font-weight:700;">
             ★ ${book.year}
           </div>
         </div>
@@ -657,11 +719,11 @@ window.closeBookReader = function() {
 };
 
 // ============================================================================
-// TRỤ CỘT 3: KHO BÀI VIẾT HỌC SINH & CỔNG ĐÓNG GÓP / KIỂM DUYỆT
+// CHUYÊN MỤC 4: KHO BÀI VIẾT CẢM NHẬN VỀ BÁC & CỔNG ĐÓNG GÓP HỌC SINH
 // ============================================================================
 function getStudentArticlesStore() {
   try {
-    const raw = localStorage.getItem('mdc_student_articles_v2');
+    const raw = localStorage.getItem('mdc_student_articles_v3');
     if (raw) return JSON.parse(raw);
   } catch (e) {}
   return [...INITIAL_STUDENT_ARTICLES];
@@ -669,7 +731,7 @@ function getStudentArticlesStore() {
 
 function saveStudentArticlesStore(list) {
   try {
-    localStorage.setItem('mdc_student_articles_v2', JSON.stringify(list));
+    localStorage.setItem('mdc_student_articles_v3', JSON.stringify(list));
   } catch (e) {}
 }
 
@@ -710,7 +772,6 @@ function initStudentRepository() {
     titleEl.value = '';
     contentEl.value = '';
 
-    // Chuyển sang tab Hàng chờ duyệt để người trình bày thấy ngay bài vừa gửi
     currentArticleFilter = 'pending';
     document.querySelectorAll('[data-art-filter]').forEach(btn => {
       btn.classList.toggle('active', btn.getAttribute('data-art-filter') === 'pending');
@@ -720,8 +781,8 @@ function initStudentRepository() {
     if (notice) {
       notice.style.display = 'block';
       notice.innerHTML = `
-        <strong>🎉 Đã nhận bài viết của học sinh!</strong><br/>
-        Bài viết đã được đưa vào <strong>“⏳ Hàng chờ Giáo viên duyệt”</strong> bên trái. Bạn có thể bấm nút <strong>“✔ Phê duyệt đăng lên Kho”</strong> ngay trên thẻ bài viết để trải nghiệm quy trình duyệt bài!
+        <strong>🎉 Đã gửi bài cảm nhận thành công!</strong><br/>
+        Bài viết đang nằm ở mục <strong>“⏳ Bài mới chờ duyệt”</strong> bên trái. Bạn có thể bấm nút <strong>“✔ Phê duyệt đăng lên Kho”</strong> ngay trên bài viết để đăng công khai!
       `;
     }
   });
@@ -739,7 +800,6 @@ window.toggleTeacherModerationMode = function() {
   const label = document.getElementById('modStatusLabel');
   if (label) {
     label.textContent = teacherModerationMode ? 'ĐANG BẬT (Demo)' : 'ĐANG TẮT (Chế độ Khách)';
-    label.style.color = teacherModerationMode ? 'var(--gold-bright)' : '#9ca3af';
   }
   renderStudentArticlesList();
 };
@@ -763,8 +823,8 @@ function renderStudentArticlesList() {
 
   if (filtered.length === 0) {
     grid.innerHTML = `
-      <div style="grid-column: 1 / -1; padding: 2rem; text-align: center; background: rgba(255,255,255,0.03); border: 1px dashed var(--gold-muted); border-radius: 12px; color: var(--text-light-muted);">
-        Hiện không có bài viết nào trong mục này. Hãy thử gửi một bài viết mới ở biểu mẫu bên phải!
+      <div style="grid-column: 1 / -1; padding: 2rem; text-align: center; background: rgba(65,6,6,0.5); border: 1.5px dashed var(--gold-border); border-radius: 12px; color: var(--text-gold-soft);">
+        Hiện chưa có bài viết nào trong mục này. Mời bạn gửi bài cảm nhận ở khung bên phải!
       </div>
     `;
     return;
@@ -779,35 +839,35 @@ function renderStudentArticlesList() {
         <div class="article-badge-row">
           <span class="article-topic-tag">${art.topic}</span>
           <span class="article-status-tag ${isApproved ? 'approved' : 'pending'}">
-            ${isApproved ? '✔ Đã duyệt công khai' : '⏳ Chờ GV duyệt'}
+            ${isApproved ? '✔ Đã duyệt' : '⏳ Chờ GV duyệt'}
           </span>
         </div>
 
         <h3 class="student-article-title">${art.title}</h3>
         <div class="student-author-meta">
-          ✍️ ${art.name} • <span style="opacity:0.85; font-weight:400;">${art.className} (${art.date})</span>
+          ✍️ ${art.name} • <span style="opacity:0.9; font-weight:500;">${art.className} (${art.date})</span>
         </div>
         <p class="student-article-excerpt">${excerpt}</p>
 
         <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:auto;">
           <button class="btn-secondary" type="button" onclick="openStudentArticleDetail('${art.id}')" style="flex:1; padding:0.5rem 0.75rem; font-size:0.8rem; justify-content:center;">
-            📄 Đọc toàn văn
+            📄 Đọc bài cảm nhận
           </button>
-          <button class="btn-secondary" type="button" onclick="speakText('${art.title.replace(/'/g, "\\'")}. Bài viết của học sinh ${art.name}. ${art.content.replace(/\n/g, ' ').replace(/'/g, "\\'")}')" style="padding:0.5rem 0.75rem; font-size:0.8rem;">
+          <button class="btn-secondary" type="button" onclick="speakText('${art.title.replace(/'/g, "\\'")}. Bài cảm nhận của ${art.name}. ${art.content.replace(/\n/g, ' ').replace(/'/g, "\\'")}')" style="padding:0.5rem 0.75rem; font-size:0.8rem;">
             🔊 Nghe
           </button>
         </div>
 
         ${teacherModerationMode ? `
-          <div style="margin-top:0.75rem; padding-top:0.75rem; border-top:1px dashed rgba(212,168,83,0.25); display:flex; gap:0.5rem;">
+          <div style="margin-top:0.75rem; padding-top:0.75rem; border-top:1px dashed var(--gold-border); display:flex; gap:0.5rem;">
             ${!isApproved ? `
-              <button type="button" onclick="approveStudentArticle('${art.id}')" style="flex:1; background:#15803d; color:#fff; border:none; padding:0.45rem 0.65rem; border-radius:4px; font-size:0.78rem; font-weight:700; cursor:pointer;">
+              <button type="button" onclick="approveStudentArticle('${art.id}')" style="flex:1; background:#15803d; color:#fff; border:1px solid #4ade80; padding:0.45rem 0.65rem; border-radius:4px; font-size:0.78rem; font-weight:800; cursor:pointer;">
                 ✔ Phê duyệt đăng lên Kho
               </button>
             ` : `
-              <span style="font-size:0.74rem; color:#86efac; display:flex; align-items:center;">✔ Đang hiển thị trên Kho</span>
+              <span style="font-size:0.74rem; color:#bbf7d0; font-weight:700; display:flex; align-items:center;">✔ Đang hiển thị công khai</span>
             `}
-            <button type="button" onclick="deleteStudentArticle('${art.id}')" style="background:rgba(185,28,28,0.3); color:#fca5a5; border:1px solid rgba(248,113,113,0.4); padding:0.42rem 0.65rem; border-radius:4px; font-size:0.75rem; cursor:pointer; margin-left:auto;">
+            <button type="button" onclick="deleteStudentArticle('${art.id}')" style="background:rgba(45,4,4,0.7); color:#fca5a5; border:1px solid rgba(248,113,113,0.5); padding:0.42rem 0.65rem; border-radius:4px; font-size:0.75rem; cursor:pointer; margin-left:auto;">
               Xóa
             </button>
           </div>
@@ -848,21 +908,21 @@ window.openStudentArticleDetail = function(id) {
   if (!modal || !body) return;
 
   body.innerHTML = `
-    <span style="display:inline-block; background:rgba(212,168,83,0.18); color:var(--gold-bright); padding:0.25rem 0.75rem; border-radius:4px; font-size:0.78rem; margin-bottom:0.75rem;">
+    <span style="display:inline-block; background:var(--gold-bright); color:var(--red-deep); font-weight:800; padding:0.25rem 0.75rem; border-radius:4px; font-size:0.78rem; margin-bottom:0.75rem;">
       ${art.topic}
     </span>
-    <h3 style="font-family:var(--font-serif); font-size:1.55rem; color:var(--text-light); margin-bottom:0.45rem;">
+    <h3 style="font-family:var(--font-serif); font-size:1.55rem; color:#ffffff; margin-bottom:0.45rem;">
       ${art.title}
     </h3>
-    <p style="font-size:0.86rem; color:var(--gold-primary); margin-bottom:1.25rem;">
+    <p style="font-size:0.86rem; color:var(--gold-bright); margin-bottom:1.25rem;">
       ✍️ Tác giả: <strong>${art.name}</strong> • ${art.className} • (${art.date})
     </p>
-    <div style="background:rgba(0,0,0,0.35); border-left:3px solid var(--gold-primary); padding:1.35rem; border-radius:8px; margin-bottom:1.5rem; font-size:0.98rem; color:var(--bg-parchment); line-height:1.8;">
+    <div style="background:rgba(40,4,4,0.65); border-left:4px solid var(--gold-bright); padding:1.35rem; border-radius:8px; margin-bottom:1.5rem; font-size:0.98rem; color:#ffffff; line-height:1.8;">
       ${art.content.replace(/\n/g, '<br/>')}
     </div>
     <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
       <button class="btn-primary" type="button" onclick="speakText('${art.title.replace(/'/g, "\\'")}. Bài viết của ${art.name}. ${art.content.replace(/\n/g, ' ').replace(/'/g, "\\'")}')">
-        🔊 Nghe đọc bài viết này
+        🔊 Nghe đọc bài cảm nhận này
       </button>
       <button class="btn-secondary" type="button" onclick="closeArticleModal()">
         Đóng cửa sổ
@@ -916,7 +976,7 @@ function initAudioGuideButton() {
   const labelGuide = document.getElementById('audioGuideLabel');
   if (!btnGuide) return;
 
-  const welcomeNarration = 'Chào mừng quý đại biểu, thầy cô giáo, các em học sinh Trường Trung học phổ thông Mạc Đĩnh Chi và nhân dân Phường Phú Lâm đến với Không gian văn hóa Hồ Chí Minh trực tuyến. Trang web bao gồm 3 phân khu trọng tâm: Một là Mô hình kiến trúc 3D phòng bảo tàng của nhà trường; Hai là Thư viện sách điện tử lật trang; và Ba là Kho bài viết do học sinh đóng góp có kiểm duyệt.';
+  const welcomeNarration = 'Chào mừng quý đại biểu, thầy cô giáo, các em học sinh Trường Trung học phổ thông Mạc Đĩnh Chi và nhân dân Phường Phú Lâm đến với Không gian văn hóa Hồ Chí Minh trực tuyến. Lấy cảm hứng từ sắc đỏ vàng cờ Tổ quốc và vẻ đẹp mộc mạc của Làng Sen quê Bác tại Kim Liên, Nam Đàn, Nghệ An, trang web mời quý vị khám phá Mô hình Bảo tàng 3D, đọc Sách Online lật trang, gửi Bài viết cảm nhận về Bác và tham gia Trắc nghiệm tìm hiểu về Người.';
 
   btnGuide.addEventListener('click', () => {
     if (isAudioPlaying) {
@@ -931,7 +991,7 @@ function initAudioGuideButton() {
 }
 
 // ============================================================================
-// TRẮC NGHIỆM & SỔ VÀNG LƯU NIỆM
+// CHUYÊN MỤC 5: TRẮC NGHIỆM TÌM HIỂU VỀ BÁC & SỔ VÀNG LƯU NIỆM
 // ============================================================================
 function initQuiz() {
   renderQuizStep();
@@ -943,15 +1003,18 @@ function renderQuizStep() {
 
   if (currentQuizIdx >= QUIZ_QUESTIONS.length) {
     box.innerHTML = `
-      <div style="text-align: center; padding: 1.5rem 1rem; background: rgba(212,168,83,0.1); border: 1px dashed var(--gold-primary); border-radius: 12px;">
-        <div style="font-size: 2.4rem; margin-bottom: 0.5rem;">🏅</div>
-        <h4 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--gold-bright); margin-bottom: 0.4rem;">
-          Chứng nhận Tham quan & Tìm hiểu
+      <div style="text-align: center; padding: 1.75rem 1.25rem; background: linear-gradient(145deg, #8f1414, #540808); border: 2.5px solid var(--gold-bright); border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+        <div style="font-size: 2.6rem; margin-bottom: 0.4rem;">🏅</div>
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gold-bright); font-weight: 800;">
+          TRƯỜNG THPT MẠC ĐĨNH CHI & PHƯỜNG PHÚ LÂM
+        </div>
+        <h4 style="font-family: var(--font-serif); font-size: 1.5rem; color: #ffffff; margin: 0.35rem 0 0.5rem;">
+          Giấy Chứng Nhận Tìm Hiểu Về Bác Hồ
         </h4>
-        <p style="font-size: 0.9rem; color: var(--text-light-muted); margin-bottom: 1rem;">
-          Bạn đã hoàn thành <strong>${quizScore}/${QUIZ_QUESTIONS.length}</strong> câu hỏi tại Không gian Văn hóa Hồ Chí Minh – Trường THPT Mạc Đĩnh Chi & Phường Phú Lâm!
+        <p style="font-size: 0.94rem; color: var(--text-gold-soft); margin-bottom: 1.25rem;">
+          Chúc mừng bạn đã trả lời đúng <strong style="color: var(--gold-bright); font-size: 1.15rem;">${quizScore}/${QUIZ_QUESTIONS.length}</strong> câu hỏi trắc nghiệm tại Không gian Văn hóa Hồ Chí Minh trực tuyến!
         </p>
-        <button class="btn-primary" type="button" onclick="resetQuiz()">Làm lại lượt mới</button>
+        <button class="btn-primary" type="button" onclick="resetQuiz()">🔄 Làm lại lượt trắc nghiệm mới</button>
       </div>
     `;
     return;
@@ -961,10 +1024,14 @@ function renderQuizStep() {
   quizAnswered = false;
 
   box.innerHTML = `
-    <div style="font-size: 0.8rem; color: var(--gold-primary); margin-bottom: 0.4rem;">
-      Câu hỏi ${currentQuizIdx + 1} / ${QUIZ_QUESTIONS.length} • Điểm: ${quizScore}
+    <div style="display:flex; justify-content:space-between; align-items:center; font-size: 0.82rem; color: var(--gold-bright); font-weight: 700; margin-bottom: 0.6rem;">
+      <span>Câu hỏi ${currentQuizIdx + 1} / ${QUIZ_QUESTIONS.length}</span>
+      <span>Điểm hiện tại: ${quizScore}/${QUIZ_QUESTIONS.length}</span>
     </div>
-    <h4 style="font-size: 1rem; margin-bottom: 1rem; color: var(--text-light);">
+    <div style="width:100%; height:6px; background:rgba(0,0,0,0.4); border-radius:999px; overflow:hidden; margin-bottom:1rem;">
+      <div style="width:${((currentQuizIdx + 1) / QUIZ_QUESTIONS.length) * 100}%; height:100%; background:var(--gold-bright);"></div>
+    </div>
+    <h4 style="font-size: 1.04rem; margin-bottom: 1rem; color: #ffffff; line-height: 1.5;">
       ${q.question}
     </h4>
     <div id="quizOptionsList">
@@ -974,7 +1041,7 @@ function renderQuizStep() {
         </button>
       `).join('')}
     </div>
-    <div id="quizFeedback" style="margin-top: 0.65rem; font-size: 0.86rem; min-height: 1.4rem;"></div>
+    <div id="quizFeedback" style="margin-top: 0.65rem; font-size: 0.88rem; font-weight: 700; min-height: 1.5rem;"></div>
   `;
 }
 
@@ -993,9 +1060,9 @@ window.selectQuizOption = function(selectedIndex) {
 
   if (selectedIndex === q.correctIndex) {
     quizScore++;
-    feedback.innerHTML = `<span style="color: #4ade80;">✔ ${q.explanation}</span>`;
+    feedback.innerHTML = `<span style="color: #bbf7d0;">✔ ${q.explanation}</span>`;
   } else {
-    feedback.innerHTML = `<span style="color: #fca5a5;">✘ ${q.explanation}</span>`;
+    feedback.innerHTML = `<span style="color: #fecaca;">✘ ${q.explanation}</span>`;
   }
 
   setTimeout(() => {
@@ -1031,7 +1098,7 @@ function initGuestbook() {
         message: msgInput.value.trim()
       });
 
-      localStorage.setItem('bthcm_guestbook', JSON.stringify(saved));
+      localStorage.setItem('bthcm_guestbook_v3', JSON.stringify(saved));
       nameInput.value = '';
       msgInput.value = '';
       renderGuestbookEntries();
@@ -1041,7 +1108,7 @@ function initGuestbook() {
 
 function getGuestbookData() {
   try {
-    const raw = localStorage.getItem('bthcm_guestbook');
+    const raw = localStorage.getItem('bthcm_guestbook_v3');
     if (raw) return JSON.parse(raw);
   } catch (e) {}
   return [...INITIAL_GUESTBOOK];
@@ -1054,10 +1121,10 @@ function renderGuestbookEntries() {
   const entries = getGuestbookData();
   container.innerHTML = entries.map(entry => `
     <div class="guest-entry">
-      <div style="font-size:0.78rem; color:var(--gold-bright); font-weight:700; margin-bottom:0.2rem;">
-        ${entry.name} • <span style="font-weight:400; opacity:0.85;">${entry.role} (${entry.date})</span>
+      <div style="font-size:0.78rem; color:var(--gold-bright); font-weight:800; margin-bottom:0.2rem;">
+        ${entry.name} • <span style="font-weight:500; opacity:0.9;">${entry.role} (${entry.date})</span>
       </div>
-      <div style="font-size:0.86rem; color:var(--text-light);">“${entry.message}”</div>
+      <div style="font-size:0.88rem; color:#ffffff;">“${entry.message}”</div>
     </div>
   `).join('');
 }
